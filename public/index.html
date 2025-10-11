@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>AAPVAS - Assist And Promote Virtual Assistant Services</title>
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      height: 100vh;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
+      color: white;
+      background: url("virtual-assistant-landing-page.jpg") no-repeat center center/cover;
+      position: relative;
+      overflow: hidden;
+    }
+
+    body::after {
+      content: "";
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      background: rgba(0,0,0,0.55); /* overlay */
+      z-index: 1;
+    }
+
+    .container {
+      position: relative;
+      z-index: 2;
+      padding: 40px;
+      border-radius: 15px;
+      background: rgba(255, 255, 255, 0.1);
+      backdrop-filter: blur(10px);
+      box-shadow: 0 8px 30px rgba(0,0,0,0.4);
+      animation: fadeIn 2s ease;
+      max-width: 90%;
+    }
+
+    h1 {
+      font-size: 3rem;
+      margin-bottom: 10px;
+      font-weight: 700;
+    }
+
+    p {
+      font-size: 1.3rem;
+      margin-bottom: 20px;
+      opacity: 0.9;
+    }
+
+    .timer {
+      display: flex;
+      justify-content: center;
+      gap: 15px;
+      margin-top: 20px;
+      flex-wrap: wrap;
+    }
+
+    .time-box {
+      background: rgba(255, 255, 255, 0.15);
+      padding: 20px 15px;
+      border-radius: 12px;
+      min-width: 80px;
+      backdrop-filter: blur(5px);
+      box-shadow: 0 4px 15px rgba(0,0,0,0.3);
+    }
+
+    .time-box h2 {
+      font-size: 2rem;
+      margin: 0;
+      font-weight: bold;
+    }
+
+    .time-box span {
+      font-size: 0.9rem;
+      opacity: 0.8;
+    }
+
+    @keyframes fadeIn {
+      from { opacity: 0; transform: scale(0.9); }
+      to { opacity: 1; transform: scale(1); }
+    }
+
+    /* Floating Services */
+    .floating-services {
+      position: absolute;
+      top: 0; left: 0; right: 0; bottom: 0;
+      z-index: 2;
+      pointer-events: none;
+    }
+
+    .service {
+      position: absolute;
+      font-size: 1rem;
+      font-weight: bold;
+      color: #fff;
+      background: #61615d;
+      padding: 8px 15px;
+      border-radius: 20px;
+      backdrop-filter: blur(6px);
+      animation: float 6s infinite ease-in-out;
+      white-space: nowrap;
+    }
+
+    .service:nth-child(1) { top: 15%; left: 10%; animation-delay: 0s; }
+    .service:nth-child(2) { top: 30%; right: 12%; animation-delay: 1s; }
+    .service:nth-child(3) { bottom: 25%; left: 15%; animation-delay: 2s; }
+    .service:nth-child(4) { top: 65%; right: 10%; animation-delay: 3s; }
+    .service:nth-child(5) { bottom: 10%; left: 40%; animation-delay: 4s; }
+    .service:nth-child(6) { top: 80%; right: 35%; animation-delay: 5s; }
+
+    @keyframes float {
+      0% { transform: translateY(0px); opacity: 0.8; }
+      50% { transform: translateY(-15px); opacity: 1; }
+      100% { transform: translateY(0px); opacity: 0.8; }
+    }
+
+    /* ---------- Responsive Design ---------- */
+    @media (max-width: 1024px) {
+      h1 { font-size: 2.5rem; }
+      p { font-size: 1.1rem; }
+      .time-box h2 { font-size: 1.6rem; }
+    }
+
+    @media (max-width: 768px) {
+      h1 { font-size: 2rem; }
+      p { font-size: 1rem; }
+      .container { padding: 25px; }
+      .time-box { padding: 15px; min-width: 70px; }
+      .service { font-size: 0.85rem; padding: 6px 10px; }
+    }
+
+    @media (max-width: 480px) {
+      body { align-items: center; padding-top: 0; }
+      h1 { font-size: 1.6rem; }
+      p { font-size: 0.9rem; }
+      .timer { gap: 10px; }
+      .time-box { padding: 10px; min-width: 60px; }
+      .time-box h2 { font-size: 1.2rem; }
+      .time-box span { font-size: 0.7rem; }
+      .service { font-size: 0.75rem; padding: 5px 8px; }
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <h1>🚀 We’re Launching Soon!</h1>
+    <p>Our website will be live in:</p>
+    <div class="timer">
+      <div class="time-box"><h2 id="days">0</h2><span>Days</span></div>
+      <div class="time-box"><h2 id="hours">0</h2><span>Hours</span></div>
+      <div class="time-box"><h2 id="minutes">0</h2><span>Minutes</span></div>
+      <div class="time-box"><h2 id="seconds">0</h2><span>Seconds</span></div>
+    </div>
+  </div>
+
+  <div class="floating-services">
+    <div class="service">Administrative Support</div>
+    <div class="service">Email Management</div>
+    <div class="service">Data Entry</div>
+    <div class="service">Social Media Management</div>
+    <div class="service">Web Development</div>
+    <div class="service">Online Marketing</div>
+  </div>
+
+  <script>
+    // Set 15 days from now
+    var countDownDate = new Date();
+    countDownDate.setDate(countDownDate.getDate() + 15);
+
+    var x = setInterval(function() {
+      var now = new Date().getTime();
+      var distance = countDownDate - now;
+
+      var days = Math.floor(distance / (1000 * 60 * 60 * 24));
+      var hours = Math.floor((distance % (1000 * 60 * 60 * 24)) / (1000 * 60 * 60));
+      var minutes = Math.floor((distance % (1000 * 60 * 60)) / (1000 * 60));
+      var seconds = Math.floor((distance % (1000 * 60)) / 1000);
+
+      document.getElementById("days").innerText = days;
+      document.getElementById("hours").innerText = hours;
+      document.getElementById("minutes").innerText = minutes;
+      document.getElementById("seconds").innerText = seconds;
+
+      if (distance < 0) {
+        clearInterval(x);
+        document.querySelector(".timer").innerHTML = "<h2>🎉 We Are Live!</h2>";
+      }
+    }, 1000);
+  </script>
+</body>
+</html>
