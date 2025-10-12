@@ -17,12 +17,12 @@ document.addEventListener("DOMContentLoaded", function () {
         // }
 
         // Button style change on scroll
-        const btn = document.querySelector(".btn-custom");
-        if (window.scrollY > 200) {
+        // const btn = document.querySelector(".btn-custom");
+        // if (window.scrollY > 200) {
             // Change after 200px scroll (adjust as needed)
-            btn.classList.add("scrolled");
-        } else {
-            btn.classList.remove("scrolled");
-        }
+        //     btn.classList.add("scrolled");
+        // } else {
+        //     btn.classList.remove("scrolled");
+        // // }
     });
 });

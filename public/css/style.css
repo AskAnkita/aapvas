@@ -16,9 +16,9 @@ body {
     padding: 1rem 0;
 }
 
-.navbar.transparent {
+/* .navbar.transparent {
     background-color: transparent !important;
-}
+} */
 
 /* Ensure bg-dark uses theme color */
 .navbar.bg-dark {
@@ -172,7 +172,8 @@ footer {
         width: 100%;
         text-align: left;
     }
-    .navbar .container, .navbar .container-fluid {
+    .navbar .container,
+    .navbar .container-fluid {
         padding-left: 8px !important;
         padding-right: 8px !important;
         margin: 0 !important;
@@ -243,9 +244,10 @@ footer {
     margin: 0;
     padding: 0;
     font-family: "Poppins", sans-serif;
-    min-height: 70vh; /* full viewport */
+    min-height: 85vh; /* full viewport */
     color: white;
-    background: url("../assets/images/virtual-assistant-landing-page.jpg") no-repeat center center/cover;
+    background: url("../assets/images/virtual-assistant-landing-page.jpg")
+        no-repeat center center/cover;
     position: relative;
     overflow: hidden;
 }
@@ -284,15 +286,42 @@ footer {
     text-align: center;
     transition: background-color 0.3s, color 0.3s;
     cursor: pointer;
+    z-index: 5;
+    pointer-events: auto;
+}
+/* Smooth zoom animation */
+.service-card.zoom-highlight {
+    transform: scale(1.08);
+    transition: transform 0.4s cubic-bezier(0.4, 2, 0.6, 1);
+    z-index: 10;
+    box-shadow: 0 0 20px rgba(255, 98, 0, 0.4);
 }
 
 @media (min-width: 768px) {
-    .service:nth-child(1) { top: 15%; left: 10%; }
-    .service:nth-child(2) { top: 25%; right: 12%; }
-    .service:nth-child(3) { top: 45%; left: 12%; }
-    .service:nth-child(4) { top: 55%; right: 8%; }
-    .service:nth-child(5) { top: 70%; left: 20%; }
-    .service:nth-child(6) { top: 85%; right: 15%; }
+    .service:nth-child(1) {
+        top: 15%;
+        left: 10%;
+    }
+    .service:nth-child(2) {
+        top: 25%;
+        right: 12%;
+    }
+    .service:nth-child(3) {
+        top: 45%;
+        left: 12%;
+    }
+    .service:nth-child(4) {
+        top: 55%;
+        right: 8%;
+    }
+    .service:nth-child(5) {
+        top: 70%;
+        left: 20%;
+    }
+    .service:nth-child(6) {
+        top: 85%;
+        right: 15%;
+    }
     .service {
         position: absolute;
         animation: float 6s infinite ease-in-out;
@@ -301,9 +330,18 @@ footer {
 }
 
 @keyframes float {
-    0% { transform: translateY(0px); opacity: 0.8; }
-    50% { transform: translateY(-15px); opacity: 1; }
-    100% { transform: translateY(0px); opacity: 0.8; }
+    0% {
+        transform: translateY(0px);
+        opacity: 0.8;
+    }
+    50% {
+        transform: translateY(-15px);
+        opacity: 1;
+    }
+    100% {
+        transform: translateY(0px);
+        opacity: 0.8;
+    }
 }
 
 .service:hover {
@@ -313,17 +351,34 @@ footer {
 
 /* Responsive Adjustments */
 @media (max-width: 1024px) {
-    .service-banner { min-height: 60vh; }
-    .service-banner h2 { font-size: 2rem; }
-    .service-banner h4 { font-size: 1rem; }
-    .service { padding: 0.4rem 0.8rem; font-size: 0.9rem; }
+    .service-banner {
+        min-height: 60vh;
+    }
+    .service-banner h2 {
+        font-size: 2rem;
+    }
+    .service-banner h4 {
+        font-size: 1rem;
+    }
+    .service {
+        padding: 0.4rem 0.8rem;
+        font-size: 0.9rem;
+    }
 }
 
 @media (max-width: 768px) {
-    .service-banner { min-height: 50vh; }
-    .flex-col { flex-direction: column !important; }
-    .service-banner h2 { font-size: 1.5rem; }
-    .service-banner h4 { font-size: 0.9rem; }
+    .service-banner {
+        min-height: 50vh;
+    }
+    .flex-col {
+        flex-direction: column !important;
+    }
+    .service-banner h2 {
+        font-size: 1.5rem;
+    }
+    .service-banner h4 {
+        font-size: 0.9rem;
+    }
     .floating-services {
         position: static;
         grid-template-columns: 1fr;
@@ -338,11 +393,23 @@ footer {
 }
 
 @media (max-width: 480px) {
-    .service-banner { min-height: 40vh; }
-    .service-banner h2 { font-size: 1.2rem; }
-    .service-banner h4 { font-size: 0.8rem; }
-    .service { padding: 0.2rem 0.4rem; font-size: 0.75rem; }
-    .floating-services { gap: 0.1rem; padding: 0.5rem; }
+    .service-banner {
+        min-height: 40vh;
+    }
+    .service-banner h2 {
+        font-size: 1.2rem;
+    }
+    .service-banner h4 {
+        font-size: 0.8rem;
+    }
+    .service {
+        padding: 0.2rem 0.4rem;
+        font-size: 0.75rem;
+    }
+    .floating-services {
+        gap: 0.1rem;
+        padding: 0.5rem;
+    }
 }
 
 /* Highlight and Zoom effect for cards */

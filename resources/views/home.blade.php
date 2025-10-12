@@ -13,9 +13,9 @@
                         Save time, cut costs, and boost productivity with our professional virtual assistant services
                         tailored for entrepreneurs, startups, and growing businesses.
                     </p>
-                    <a href="{{ route('services') }}" class="btn-primary transition duration-300" data-aos="fade-up"
+                    <a href="{{ route('contact') }}" class="btn-primary transition duration-300" data-aos="fade-up"
                         data-aos-delay="400">
-                        Call To Action
+                        Book a Call
                     </a>
                 </div>
                 <div class="md:w-1/2 hidden md:block">
