@@ -38,40 +38,33 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav ms-auto flex-auto justify-center ">
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('home') ? 'active fw-bold' : '' }}"
-                            href="{{ route('home') }}"
-                            style="color: {{ request()->routeIs('home') ? '#6c757d' : '#fff' }};">Home</a>
-                    </li>
+                <ul class="navbar-nav w-100 justify-content-center">
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('about') ? 'active fw-bold' : '' }}"
-                            href="{{ route('about') }}"
-                            style="color: {{ request()->routeIs('home') ? '#6c757d' : '#fff' }};">About Us</a>
+                            href="{{ route('about') }}" style="color: #1a2b49;">About Us</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('services') ? 'active fw-bold' : '' }}"
-                            href="{{ route('services') }}"
-                            style="color: {{ request()->routeIs('home') ? '#6c757d' : '#fff' }};">Services</a>
-                    </li>
-                    <li class="nav-item">
-                        <a class="nav-link {{ request()->routeIs('how-it-works') ? 'active fw-bold' : '' }}"
-                            href="{{ route('how-it-works') }}"
-                            style="color: {{ request()->routeIs('home') ? '#6c757d' : '#fff' }};">How It Works</a>
+                            href="{{ route('services') }}" style="color: #1a2b49;">Services</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('pricing') ? 'active fw-bold' : '' }}"
-                            href="{{ route('pricing') }}"
-                            style="color: {{ request()->routeIs('home') ? '#6c757d' : '#fff' }};">Pricing</a>
+                            href="{{ route('pricing') }}" style="color: #1a2b49;">Pricing</a>
                     </li>
-                    <li class="nav-item d-lg-none">
-                        <a href="{{ route('contact') }}" class="nav-link btn btn-call w-100 text-center"
-                            style="background-color: #ff6600; color: #fff; border-radius: 50px;">Call Now</a>
+                    <!-- Chat Now button for mobile, inside the menu -->
+                    <li class="nav-item d-block d-lg-none mt-2">
+                        <a href="https://wa.me/919913447761?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services"
+                            target="_blank" class="btn btn-call w-100 text-center">
+                            Chat Now
+                        </a>
                     </li>
                 </ul>
+                <!-- Chat Now button for desktop, outside the menu -->
+                <a href="https://wa.me/919913447761?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services"
+                    target="_blank" class="btn btn-call ms-3 d-none d-lg-inline-block">
+                    Chat Now
+                </a>
             </div>
-            <a href="{{ route('contact') }}" class="btn btn-call d-none d-lg-inline-block"
-                style="background-color: #ff6600; color: #fff; border-radius: 50px;">Call Now</a>
         </div>
     </nav>
 
@@ -176,7 +169,7 @@
                 <span class="navbar-toggler-icon"></span>
             </button>
             <div class="collapse navbar-collapse" id="navbarNav">
-                <ul class="navbar-nav mx-auto"> <!-- Centered with mx-auto -->
+                <ul class="navbar-nav w-100 justify-content-center">
                     <li class="nav-item">
                         <a class="nav-link {{ request()->routeIs('about') ? 'active fw-bold' : '' }}"
                             href="{{ route('about') }}" style="color: #1a2b49;">About Us</a>
@@ -189,15 +182,24 @@
                         <a class="nav-link {{ request()->routeIs('pricing') ? 'active fw-bold' : '' }}"
                             href="{{ route('pricing') }}" style="color: #1a2b49;">Pricing</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link {{ request()->routeIs('contact') ? 'active fw-bold' : '' }}"
+                            href="{{ route('contact') }}" style="color: #1a2b49;">Contact Us</a>
+                    </li>
+                    <!-- Chat Now button for mobile, inside the menu -->
+                    <li class="nav-item d-block d-lg-none mt-2 ">
+                        <a href="https://wa.me/919913447761?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services"
+                            target="_blank" class="btn btn-call w-100 text-center">
+                            Chat Now
+                        </a>
+                    </li>
                 </ul>
+                <!-- Chat Now button for desktop, outside the menu -->
                 <a href="https://wa.me/919913447761?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services"
-                    target="_blank" class="btn btn-call ms-3 mt-3 d-block d-lg-none">
+                    target="_blank" class="btn btn-call ms-3 d-none d-lg-inline-block text-nowrap">
                     Chat Now
                 </a>
-                <a href="https://wa.me/919913447761?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services"
-                    target="_blank" class="btn btn-call ms-3 d-none d-lg-inline-block">
-                    Chat Now
-                </a>
+
             </div>
         </div>
     </nav>

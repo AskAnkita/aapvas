@@ -161,10 +161,25 @@ footer {
 /* navbar */
 @media (max-width: 991px) {
     .navbar-nav {
-        padding: 1rem;
+        width: 100%;
+        flex-direction: column;
+        align-items: stretch;
+        padding: 0.5rem 0;
+        margin: 0;
     }
     .nav-link {
-        padding: 0.5rem 0;
+        padding: 0.5rem 1rem;
+        width: 100%;
+        text-align: left;
+    }
+    .navbar .container, .navbar .container-fluid {
+        padding-left: 8px !important;
+        padding-right: 8px !important;
+        margin: 0 !important;
+        max-width: 100vw !important;
+    }
+    body {
+        overflow-x: hidden;
     }
 }
 
