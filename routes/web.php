@@ -27,3 +27,5 @@ Route::get('/contact', function () {
     return view('contact');
 })->name('contact');
 Route::post('/contact/send', [ContactController::class, 'send'])->name('contact.send');
+
+Route::view('/privacy-policy', 'privacy-policy')->name('privacy.policy');

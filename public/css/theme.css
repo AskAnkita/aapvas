@@ -1,6 +1,7 @@
 :root {
     --primary: #ff6200; /* Orange for buttons/highlights */
     --secondary: #1a2b49; /* Dark navy blue text */
+    --tertiary: #063679; /* Gray for secondary text */
     --background: #f9f9f9; /* Off-white background */
     --white: #f9f9f9;
     --shadow: 0 2px 16px rgba(26, 43, 73, 0.08);

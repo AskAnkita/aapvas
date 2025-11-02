@@ -51,11 +51,14 @@ body {
     background-color: #1a2b49 !important; /* Dark navy blue on hover */
 }
 
-.hero-section {
-    border-bottom: 1px solid #ff7f00;
-    -webkit-box-shadow: 0 8px 6px -6px #ff7f00;
-    -moz-box-shadow: 0 8px 6px -6px #ff7f00;
-    box-shadow: 0 8px 6px -6px #ff7f00;
+/* Only for md and lg screen */
+@media screen {
+    .hero-section {
+        border-bottom: 1px solid #ff7f00;
+        -webkit-box-shadow: 0 8px 6px -6px #ff7f00;
+        -moz-box-shadow: 0 8px 6px -6px #ff7f00;
+        box-shadow: 0 8px 6px -6px #ff7f00;
+    }
 }
 
 /* Banner text styles */
@@ -431,3 +434,46 @@ footer {
 .service-card {
     transition: transform 0.5s ease;
 }
+/* social / contact icon brand colors */
+.icon-linkedin {
+    color: #0a66c2 !important;
+} /* LinkedIn blue */
+.icon-facebook {
+    color: #1877f2 !important;
+} /* Facebook blue */
+.icon-whatsapp {
+    color: #25d366 !important;
+} /* WhatsApp green */
+
+/* Gmail icon — solid fallback + gradient where supported */
+.icon-gmail {
+    /* solid fallback that always works */
+    color: #d44638 !important;
+
+    /* optional gradient for browsers that support background-clip:text */
+    background-image: linear-gradient(90deg, #d44638, #e57368);
+    background-size: 100% 100%;
+    -webkit-background-clip: text;
+    background-clip: text;
+    -webkit-text-fill-color: transparent; /* WebKit browsers */
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* phone/map icons use site orange (force override) */
+.icon-phone,
+.icon-location {
+    color: #ff6200 !important;
+    display: inline-block;
+    vertical-align: middle;
+}
+
+/* optional: ensure sizing/vertical alignment */
+/* .icon-gmail,
+.icon-phone,
+.icon-location {
+    width: 1em;
+    height: 1em;
+    display: inline-block;
+    vertical-align: middle;
+} */

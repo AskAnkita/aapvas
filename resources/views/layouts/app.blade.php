@@ -136,7 +136,7 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>AAPVAS</title>
+    <title>AAPVAS - Assist And Promote Virtual Assistant Services</title>
 
     <!-- Bootstrap CSS -->
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -222,6 +222,7 @@
                 <a href="{{ route('about') }}" class="hover:text-orange-500">About</a>
                 <a href="{{ route('services') }}" class="hover:text-orange-500">Services</a>
                 <a href="{{ route('contact') }}" class="hover:text-orange-500">Contact</a>
+                <a href="{{ route('privacy.policy') }}" class="hover:text-orange-500">Privacy Policy</a>
             </div>
             <div class="flex justify-center space-x-4">
                 <a href="#" class="hover:text-orange-500"><i class="fab fa-facebook-f"></i></a>
@@ -310,9 +311,9 @@
             });
 
             // Auto-hide tooltip after 6s
-            setTimeout(() => {
-                if (tooltip) tooltip.classList.add('hidden');
-            }, 6000);
+            // setTimeout(() => {
+            //     if (tooltip) tooltip.classList.add('hidden');
+            // }, 6000);
         })();
     </script>
     @stack('scripts')
