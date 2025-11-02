@@ -154,6 +154,9 @@
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}">
     <link rel="stylesheet" href="{{ asset('css/theme.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <!-- Font Awesome for WhatsApp icon -->
+    <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Custom JS -->
     <script src="{{ asset('js/custom.js') }}" crossorigin="anonymous"></script>
 </head>
@@ -188,17 +191,18 @@
                     </li>
                     <!-- Chat Now button for mobile, inside the menu -->
                     <li class="nav-item d-block d-lg-none mt-2 ">
-                        <a href="https://wa.me/919913447761?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services"
-                            target="_blank" class="btn btn-call w-100 text-center">
-                            Chat Now
-                        </a>
+                        <buton {{-- <a href="https://wa.me/919913447761?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services" --}} target="_blank" class="btn btn-call w-100 text-center">
+                            Book a Call
+                            {{-- </a> --}}
+                        </buton>
                     </li>
                 </ul>
                 <!-- Chat Now button for desktop, outside the menu -->
-                <a href="https://wa.me/919913447761?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services"
-                    target="_blank" class="btn btn-call ms-3 d-none d-lg-inline-block text-nowrap">
-                    Chat Now
-                </a>
+                {{-- <a href="https://wa.me/919913447761?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services" --}}
+                <button target="_blank" class="btn btn-call ms-3 d-none d-lg-inline-block text-nowrap">
+                    Book a Call
+                </button>
+                {{-- </a> --}}
 
             </div>
         </div>
@@ -224,11 +228,22 @@
                 <a href="#" class="hover:text-orange-500"><i class="fab fa-twitter"></i></a>
                 <a href="#" class="hover:text-orange-500"><i class="fab fa-linkedin-in"></i></a>
             </div>
-            <a href="tel:+911234567890"
+            {{-- <a href="tel:+911234567890"
                 class="btn inline-block mt-4 text-white font-semibold py-2 px-4 rounded-full bg-orange-500 hover:bg-orange-600">Call
-                Now</a>
+                Now</a> --}}
         </div>
     </footer>
+
+    <div class="quick-chat-wrap" aria-live="polite">
+        <div id="quickChatTooltip" class="quick-chat-tooltip" role="status">
+            <div class="tooltip-text">How can I help you?</div>
+            <button id="quickChatClose" class="tooltip-close" aria-label="Close tooltip">&times;</button>
+        </div>
+
+        <button id="quickChatBtn" class="quick-chat-btn" aria-label="Chat now on WhatsApp" title="Chat now">
+            <i class="fab fa-whatsapp" aria-hidden="true"></i>
+        </button>
+    </div>
 
     <!-- Bootstrap JS -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
@@ -258,11 +273,47 @@
     </script>
     <!-- AOS JS -->
     <script src="https://unpkg.com/aos@2.3.4/dist/aos.js"></script>
+    <script src="https://kit.fontawesome.com/a076d05399.js"></script>
     <script>
         AOS.init({
             duration: 1000,
             once: true,
         });
+        (function() {
+            const waNumber = '919913447761';
+            const defaultMessage = 'Hello I want to know more about your services';
+            const chatBtn = document.getElementById('quickChatBtn');
+            const tooltip = document.getElementById('quickChatTooltip');
+            const closeBtn = document.getElementById('quickChatClose');
+
+            function openWhatsApp() {
+                const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(defaultMessage)}`;
+                window.open(url, '_blank');
+            }
+
+            // Click WhatsApp button -> open chat
+            if (chatBtn) chatBtn.addEventListener('click', function(e) {
+                e.preventDefault();
+                openWhatsApp();
+            });
+
+            // Close tooltip (hide)
+            if (closeBtn) closeBtn.addEventListener('click', function(e) {
+                e.stopPropagation();
+                tooltip.classList.add('hidden');
+            });
+
+            // Clicking tooltip (not close) opens chat
+            if (tooltip) tooltip.addEventListener('click', function(e) {
+                if (e.target === closeBtn) return;
+                openWhatsApp();
+            });
+
+            // Auto-hide tooltip after 6s
+            setTimeout(() => {
+                if (tooltip) tooltip.classList.add('hidden');
+            }, 6000);
+        })();
     </script>
     @stack('scripts')
 </body>

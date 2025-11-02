@@ -21,9 +21,9 @@
         <!-- Right Floating Services -->
         <div class="relative z-10 md:w-1/2 min-h-[500px] flex justify-center">
             <div class="floating-services grid grid-cols-2 gap-6">
+                <span class="service" data-target="linked-in">LinkedIn Support</span>
                 <span class="service" data-target="admin-support">Administrative Support</span>
                 <span class="service" data-target="email-calendar">Email Management</span>
-                <span class="service" data-target="data-entry">Data Entry</span>
                 <span class="service" data-target="social-media">Social Media Management</span>
                 <span class="service" data-target="web-dev">Web Development</span>
                 <span class="service" data-target="online-marketing">Online Marketing</span>
@@ -37,6 +37,22 @@
             <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-2 sm:mb-3 md:mb-5">What We Offer</h2>
             <div class="underline mx-auto w-16 sm:w-20 md:w-24 h-1 bg-[#ff6200] mb-2 sm:mb-3 md:mb-5"></div>
             <div class="row g-4 text-center">
+
+
+                <!-- LinkedIn Support -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div id="linked-in" class="card border-0 shadow h-100 p-3 sm:p-4 service-card">
+                        <div class="mb-2 sm:mb-3"><i class="bi bi-linkedin display-5 sm:display-4 text-primary"></i></div>
+                        <h5 class="text-lg sm:text-xl">LinkedIn Support</h5>
+                        <p class="text-muted text-sm sm:text-base">
+                            From optimizing your
+                            profile and managing
+                            connections to creating engaging posts and lead generation, we help you build credibility and
+                            grow your network
+                            strategically on LinkedIn.
+                        </p>
+                    </div>
+                </div>
 
                 <!-- Administrative Support -->
                 <div class="col-12 col-sm-6 col-md-4 mb-4">
@@ -57,16 +73,6 @@
                         <h5 class="text-lg sm:text-xl">Email Management</h5>
                         <p class="text-muted text-sm sm:text-base">Keep your inbox organized and your schedule on track with
                             our email and calendar management services.</p>
-                    </div>
-                </div>
-
-                <!-- Data Entry -->
-                <div class="col-12 col-sm-6 col-md-4 mb-4">
-                    <div id="data-entry" class="card border-0 shadow h-100 p-3 sm:p-4 service-card">
-                        <div class="mb-2 sm:mb-3"><i class="bi bi-keyboard display-5 sm:display-4 text-primary"></i></div>
-                        <h5 class="text-lg sm:text-xl">Data Entry</h5>
-                        <p class="text-muted text-sm sm:text-base">Fast and accurate data entry, database management, and
-                            organization to keep your information accessible and secure.</p>
                     </div>
                 </div>
 

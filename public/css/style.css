@@ -51,6 +51,13 @@ body {
     background-color: #1a2b49 !important; /* Dark navy blue on hover */
 }
 
+.hero-section {
+    border-bottom: 1px solid #ff7f00;
+    -webkit-box-shadow: 0 8px 6px -6px #ff7f00;
+    -moz-box-shadow: 0 8px 6px -6px #ff7f00;
+    box-shadow: 0 8px 6px -6px #ff7f00;
+}
+
 /* Banner text styles */
 .banner-title {
     font-size: 64px !important;
@@ -63,6 +70,9 @@ body {
     font-size: 18px !important;
     font-weight: 400 !important;
     color: #4b5563 !important;
+}
+.banner-image {
+    width: 480px !important;
 }
 
 /* Button primary styling */
