@@ -1,0 +1,171 @@
+/* ✅ Base Styles (same as yours, with tweaks for responsiveness) */
+body {
+    margin: 0;
+    padding: 0;
+    font-family: "Poppins", sans-serif;
+    height: 100vh;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    color: white;
+    background: url("../assets/images/virtual-assistant-landing-page.jpg") no-repeat center center/cover;
+    position: relative;
+    overflow: hidden;
+}
+
+body::after {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background: rgba(0, 0, 0, 0.55);
+    z-index: 1;
+}
+
+.container {
+    position: relative;
+    z-index: 2;
+    padding: 30px;
+    border-radius: 15px;
+    background: rgba(255, 255, 255, 0.1);
+    backdrop-filter: blur(10px);
+    box-shadow: 0 8px 30px rgba(0, 0, 0, 0.4);
+    animation: fadeIn 2s ease;
+    max-width: 90%;
+    width: 600px;
+}
+
+h1 {
+    font-size: 2.5rem;
+    margin-bottom: 10px;
+    font-weight: 700;
+}
+
+p {
+    font-size: 1.2rem;
+    margin-bottom: 20px;
+    opacity: 0.9;
+}
+
+.timer {
+    display: flex;
+    justify-content: center;
+    flex-wrap: wrap; /* ✅ ensures boxes wrap on smaller screens */
+    gap: 15px;
+    margin-top: 20px;
+}
+
+.time-box {
+    background: rgba(255, 255, 255, 0.15);
+    padding: 15px 12px;
+    border-radius: 12px;
+    min-width: 70px;
+    backdrop-filter: blur(5px);
+    box-shadow: 0 4px 15px rgba(0, 0, 0, 0.3);
+}
+
+.time-box h2 {
+    font-size: 1.8rem;
+    margin: 0;
+    font-weight: bold;
+}
+
+.time-box span {
+    font-size: 0.8rem;
+    opacity: 0.8;
+}
+
+/* ✅ Floating Services */
+.floating-services {
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    z-index: 2;
+    pointer-events: none;
+}
+
+.service {
+    position: absolute;
+    font-size: 1.1rem;
+    font-weight: bold;
+    color: #fff;
+    background: rgba(255, 255, 255, 0.15);
+    padding: 8px 15px;
+    border-radius: 20px;
+    backdrop-filter: blur(6px);
+    animation: float 6s infinite ease-in-out;
+}
+
+.service:nth-child(1) {
+    top: 15%;
+    left: 10%;
+    animation-delay: 0s;
+}
+
+.service:nth-child(2) {
+    top: 28%;
+    right: 12%;
+    animation-delay: 1s;
+}
+
+.service:nth-child(3) {
+    bottom: 25%;
+    left: 15%;
+    animation-delay: 2s;
+}
+
+.service:nth-child(4) {
+    top: 55%;
+    right: 0%;
+    animation-delay: 3s;
+}
+
+.service:nth-child(5) {
+    bottom: 15%;
+    left: 40%;
+    animation-delay: 4s;
+}
+
+.service:nth-child(6) {
+    top: 70%;
+    right: 35%;
+    animation-delay: 5s;
+}
+
+/* ✅ Keyframes */
+@keyframes float {
+    0% { transform: translateY(0px); opacity: 0.8; }
+    50% { transform: translateY(-15px); opacity: 1; }
+    100% { transform: translateY(0px); opacity: 0.8; }
+}
+
+/* 🎯 RESPONSIVE BREAKPOINTS */
+
+/* Tablets */
+@media (max-width: 992px) {
+    h1 { font-size: 2.2rem; }
+    p { font-size: 1rem; }
+    .time-box { min-width: 65px; padding: 12px 10px; }
+    .service { font-size: 0.9rem; }
+}
+
+/* Mobile Landscape */
+@media (max-width: 768px) {
+    h1 { font-size: 1.8rem; }
+    p { font-size: 0.95rem; }
+    .time-box h2 { font-size: 1.5rem; }
+    .service { font-size: 0.8rem; padding: 5px 10px; }
+}
+
+/* Small Mobiles */
+@media (max-width: 480px) {
+    body { padding: 15px; }
+    h1 { font-size: 1.5rem; }
+    p { font-size: 0.85rem; }
+    .time-box { min-width: 60px; padding: 10px; }
+    .time-box h2 { font-size: 1.3rem; }
+    .time-box span { font-size: 0.75rem; }
+    .service { font-size: 0.7rem; padding: 4px 8px; }
+}

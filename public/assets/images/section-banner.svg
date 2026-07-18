@@ -1,0 +1,14 @@
+<svg viewBox="0 0 1440 320" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="waveGradient" x1="0" y1="0" x2="0" y2="1">
+      <!-- Top: Dark Navy -->
+      <stop offset="0%" stop-color="#0d182b" stop-opacity="1"></stop>
+      <!-- Middle: Navy Blue (#1a2a44) -->
+      <stop offset="50%" stop-color="#1a2a44" stop-opacity="1"></stop>
+      <!-- Bottom: Light Navy -->
+      <stop offset="100%" stop-color="#2d3b66" stop-opacity="1"></stop>
+    </linearGradient>
+  </defs>
+  <path fill="url(#waveGradient)" d="M0,160L48,170C96,180,192,200,288,213.3C384,227,480,245,576,240C672,235,768,197,864,176C960,155,1056,149,1152,160C1248,171,1344,197,1392,210.7L1440,224L1440,320L0,320Z">
+  </path>
+</svg>

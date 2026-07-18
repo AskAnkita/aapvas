@@ -1,0 +1,31 @@
+[27-Sep-2025 16:06:20 UTC] PHP Fatal error:  Uncaught ErrorException: include(/home/u258949019/domains/assistandpromote.com/laravel_project/vendor/composer/../nunomaduro/collision/src/Adapters/Laravel/ExceptionHandler.php): Failed to open stream: No such file or directory in /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/composer/ClassLoader.php:576
+Stack trace:
+#0 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/composer/ClassLoader.php(576): Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#2 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/composer/ClassLoader.php(576): include('/home/u25894901...')
+#3 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#4 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/nunomaduro/collision/src/Adapters/Laravel/CollisionServiceProvider.php(66): Composer\Autoload\ClassLoader->loadClass()
+#5 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/laravel/framework/src/Illuminate/Container/Container.php(1153): NunoMaduro\Collision\Adapters\Laravel\CollisionServiceProvider->NunoMaduro\Collision\Adapters\Laravel\{closure}()
+#6 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/laravel/framework/src/Illuminate/Container/Container.php(971): Illuminate\Container\Container->build()
+#7 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1077): Illuminate\Container\Container->resolve()
+#8 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/laravel/framework/src/Illuminate/Container/Container.php(902): Illuminate\Foundation\Application->resolve()
+#9 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/laravel/framework/src/Illuminate/Foundation/Application.php(1057): Illuminate\Container\Container->make()
+#10 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(291): Illuminate\Foundation\Application->make()
+#11 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(210): Illuminate\Foundation\Bootstrap\HandleExceptions->getExceptionHandler()
+#12 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(192): Illuminate\Foundation\Bootstrap\HandleExceptions->renderForConsole()
+#13 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleException()
+#14 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#15 {main}
+  thrown in /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/composer/ClassLoader.php on line 576
+[27-Sep-2025 16:06:20 UTC] PHP Fatal error:  Uncaught ErrorException: include(/home/u258949019/domains/assistandpromote.com/laravel_project/vendor/composer/../symfony/error-handler/Error/FatalError.php): Failed to open stream: No such file or directory in /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/composer/ClassLoader.php:576
+Stack trace:
+#0 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleError()
+#1 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/composer/ClassLoader.php(576): Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#2 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/composer/ClassLoader.php(576): include('/home/u25894901...')
+#3 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/composer/ClassLoader.php(427): Composer\Autoload\{closure}()
+#4 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(247): Composer\Autoload\ClassLoader->loadClass()
+#5 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(234): Illuminate\Foundation\Bootstrap\HandleExceptions->fatalErrorFromPhpError()
+#6 /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/laravel/framework/src/Illuminate/Foundation/Bootstrap/HandleExceptions.php(258): Illuminate\Foundation\Bootstrap\HandleExceptions->handleShutdown()
+#7 [internal function]: Illuminate\Foundation\Bootstrap\HandleExceptions->Illuminate\Foundation\Bootstrap\{closure}()
+#8 {main}
+  thrown in /home/u258949019/domains/assistandpromote.com/laravel_project/vendor/composer/ClassLoader.php on line 576
