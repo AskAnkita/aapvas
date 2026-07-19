@@ -60,9 +60,9 @@
                     <div id="linked-in" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
                         <img src="{{ asset('assets/images/cards/linkedin-support.jpg') }}" class="service-card-img" alt="LinkedIn Support">
                         <div class="p-3 sm:p-4 text-center">
-                            <div class="mb-2 sm:mb-3"><i class="bi bi-linkedin display-5 sm:display-4 text-primary"></i></div>
-                            <h5 class="text-lg sm:text-xl">LinkedIn Support</h5>
-                            <p class="text-muted text-sm sm:text-base">
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-linkedin service-card-icon"></i></div>
+                            <h5 class="service-card-title">LinkedIn Support</h5>
+                            <p class="service-card-desc">
                                 From optimizing your
                                 profile and managing
                                 connections to creating engaging posts and lead generation, we help you build credibility and
@@ -78,10 +78,10 @@
                     <div id="admin-support" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
                         <img src="{{ asset('assets/images/cards/administrative-support.jpg') }}" class="service-card-img" alt="Administrative Support">
                         <div class="p-3 sm:p-4 text-center">
-                            <div class="mb-2 sm:mb-3"><i class="bi bi-clipboard-check display-5 sm:display-4 text-primary"></i>
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-clipboard-check service-card-icon"></i>
                             </div>
-                            <h5 class="text-lg sm:text-xl">Administrative Support</h5>
-                            <p class="text-muted text-sm sm:text-base">From scheduling meetings to managing documents, our
+                            <h5 class="service-card-title">Administrative Support</h5>
+                            <p class="service-card-desc">From scheduling meetings to managing documents, our
                                 assistants handle daily admin tasks so you can stay focused on your core business.</p>
                         </div>
                     </div>
@@ -92,10 +92,10 @@
                     <div id="email-calendar" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
                         <img src="{{ asset('assets/images/cards/email-management.jpg') }}" class="service-card-img" alt="Email Management">
                         <div class="p-3 sm:p-4 text-center">
-                            <div class="mb-2 sm:mb-3"><i class="bi bi-envelope-open display-5 sm:display-4 text-primary"></i>
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-envelope-open service-card-icon"></i>
                             </div>
-                            <h5 class="text-lg sm:text-xl">Email Management</h5>
-                            <p class="text-muted text-sm sm:text-base">Keep your inbox organized and your schedule on track with
+                            <h5 class="service-card-title">Email Management</h5>
+                            <p class="service-card-desc">Keep your inbox organized and your schedule on track with
                                 our email and calendar management services.</p>
                         </div>
                     </div>
@@ -106,9 +106,9 @@
                     <div id="social-media" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
                         <img src="{{ asset('assets/images/cards/social-media-management.png') }}" class="service-card-img" alt="Social Media Management">
                         <div class="p-3 sm:p-4 text-center">
-                            <div class="mb-2 sm:mb-3"><i class="bi bi-share display-5 sm:display-4 text-primary"></i></div>
-                            <h5 class="text-lg sm:text-xl">Social Media Management</h5>
-                            <p class="text-muted text-sm sm:text-base">Create, schedule, and manage social media content to
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-share service-card-icon"></i></div>
+                            <h5 class="service-card-title">Social Media Management</h5>
+                            <p class="service-card-desc">Create, schedule, and manage social media content to
                                 increase engagement and grow your online presence.</p>
                         </div>
                     </div>
@@ -119,9 +119,9 @@
                     <div id="web-dev" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
                         <img src="{{ asset('assets/images/cards/web-development.jpg') }}" class="service-card-img" alt="Web & Software Development">
                         <div class="p-3 sm:p-4 text-center">
-                            <div class="mb-2 sm:mb-3"><i class="bi bi-code-slash display-5 sm:display-4 text-primary"></i></div>
-                            <h5 class="text-lg sm:text-xl">Web & Software Development</h5>
-                            <p class="text-muted text-sm sm:text-base">From e-commerce stores and hosting setup to custom
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-code-slash service-card-icon"></i></div>
+                            <h5 class="service-card-title">Web & Software Development</h5>
+                            <p class="service-card-desc">From e-commerce stores and hosting setup to custom
                                 web development and full software builds, we handle the technical side so your
                                 business runs smoothly online.</p>
                         </div>
@@ -133,9 +133,9 @@
                     <div id="online-marketing" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
                         <img src="{{ asset('assets/images/cards/online-marketing.png') }}" class="service-card-img" alt="Online Marketing">
                         <div class="p-3 sm:p-4 text-center">
-                            <div class="mb-2 sm:mb-3"><i class="bi bi-bullseye display-5 sm:display-4 text-primary"></i></div>
-                            <h5 class="text-lg sm:text-xl">Online Marketing</h5>
-                            <p class="text-muted text-sm sm:text-base">Boost your brand online through SEO, PPC, email
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-bullseye service-card-icon"></i></div>
+                            <h5 class="service-card-title">Online Marketing</h5>
+                            <p class="service-card-desc">Boost your brand online through SEO, PPC, email
                                 campaigns, and other digital marketing strategies.</p>
                         </div>
                     </div>
@@ -146,9 +146,9 @@
                     <div id="book-keeping" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
                         <img src="{{ asset('assets/images/cards/bookkeeping.jpg') }}" class="service-card-img" alt="Book Keeping">
                         <div class="p-3 sm:p-4 text-center">
-                            <div class="mb-2 sm:mb-3"><i class="bi bi-journal-check display-5 sm:display-4 text-primary"></i></div>
-                            <h5 class="text-lg sm:text-xl">Book Keeping</h5>
-                            <p class="text-muted text-sm sm:text-base">Accurate, up-to-date financial records — invoices,
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-journal-check service-card-icon"></i></div>
+                            <h5 class="service-card-title">Book Keeping</h5>
+                            <p class="service-card-desc">Accurate, up-to-date financial records — invoices,
                                 expenses, and reconciliation handled so your books are always audit-ready.</p>
                         </div>
                     </div>
@@ -159,9 +159,9 @@
                     <div id="real-estate" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
                         <img src="{{ asset('assets/images/cards/real-estate-management.jpg') }}" class="service-card-img" alt="Real Estate Backend Management">
                         <div class="p-3 sm:p-4 text-center">
-                            <div class="mb-2 sm:mb-3"><i class="bi bi-building display-5 sm:display-4 text-primary"></i></div>
-                            <h5 class="text-lg sm:text-xl">Real Estate Backend Management</h5>
-                            <p class="text-muted text-sm sm:text-base">Listings, documentation, client follow-ups, and
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-building service-card-icon"></i></div>
+                            <h5 class="service-card-title">Real Estate Backend Management</h5>
+                            <p class="service-card-desc">Listings, documentation, client follow-ups, and
                                 transaction paperwork managed behind the scenes for busy real estate professionals.</p>
                         </div>
                     </div>
@@ -172,9 +172,9 @@
                     <div id="virtual-receptionist" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
                         <img src="{{ asset('assets/images/cards/virtual-receptionist.jpg') }}" class="service-card-img" alt="Virtual Receptionist">
                         <div class="p-3 sm:p-4 text-center">
-                            <div class="mb-2 sm:mb-3"><i class="bi bi-telephone-fill display-5 sm:display-4 text-primary"></i></div>
-                            <h5 class="text-lg sm:text-xl">Virtual Receptionist</h5>
-                            <p class="text-muted text-sm sm:text-base">A professional, welcoming voice for every call —
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-telephone-fill service-card-icon"></i></div>
+                            <h5 class="service-card-title">Virtual Receptionist</h5>
+                            <p class="service-card-desc">A professional, welcoming voice for every call —
                                 answering, screening, and routing so no client is ever left waiting.</p>
                         </div>
                     </div>
@@ -185,9 +185,9 @@
                     <div id="recruitment" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
                         <img src="{{ asset('assets/images/cards/recruitment-management.jpg') }}" class="service-card-img" alt="Recruitment Backend Management">
                         <div class="p-3 sm:p-4 text-center">
-                            <div class="mb-2 sm:mb-3"><i class="bi bi-person-plus-fill display-5 sm:display-4 text-primary"></i></div>
-                            <h5 class="text-lg sm:text-xl">Recruitment Backend Management</h5>
-                            <p class="text-muted text-sm sm:text-base">Resume screening, interview scheduling, and
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-person-plus-fill service-card-icon"></i></div>
+                            <h5 class="service-card-title">Recruitment Backend Management</h5>
+                            <p class="service-card-desc">Resume screening, interview scheduling, and
                                 candidate coordination — we keep your hiring pipeline moving without the busywork.</p>
                         </div>
                     </div>
@@ -198,9 +198,9 @@
                     <div id="medical-transcription" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
                         <img src="{{ asset('assets/images/cards/medical-transcription-billing.jpg') }}" class="service-card-img" alt="Medical Transcription and Billing">
                         <div class="p-3 sm:p-4 text-center">
-                            <div class="mb-2 sm:mb-3"><i class="bi bi-file-earmark-medical-fill display-5 sm:display-4 text-primary"></i></div>
-                            <h5 class="text-lg sm:text-xl">Medical Transcription & Billing</h5>
-                            <p class="text-muted text-sm sm:text-base">Accurate transcription and billing support for
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-file-earmark-medical-fill service-card-icon"></i></div>
+                            <h5 class="service-card-title">Medical Transcription & Billing</h5>
+                            <p class="service-card-desc">Accurate transcription and billing support for
                                 healthcare practices, handled with care and strict attention to detail.</p>
                         </div>
                     </div>
@@ -211,9 +211,9 @@
                     <div id="personal-assistance" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
                         <img src="{{ asset('assets/images/cards/personal-assistance.jpg') }}" class="service-card-img" alt="Personal Assistance">
                         <div class="p-3 sm:p-4 text-center">
-                            <div class="mb-2 sm:mb-3"><i class="bi bi-person-check-fill display-5 sm:display-4 text-primary"></i></div>
-                            <h5 class="text-lg sm:text-xl">Personal Assistance</h5>
-                            <p class="text-muted text-sm sm:text-base">Calendar management, travel planning, and day-to-day
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-person-check-fill service-card-icon"></i></div>
+                            <h5 class="service-card-title">Personal Assistance</h5>
+                            <p class="service-card-desc">Calendar management, travel planning, and day-to-day
                                 organization so you can focus on what only you can do.</p>
                         </div>
                     </div>

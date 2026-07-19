@@ -156,7 +156,7 @@
         // serving a week-old cached one under the server's max-age=604800. A plain string
         // (not filemtime()) so this works regardless of whether public_path() actually
         // resolves to a real folder on a given deployment.
-        $assetVer = '20260719-7';
+        $assetVer = '20260719-9';
     @endphp
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ $assetVer }}">
@@ -260,7 +260,7 @@
 
     <div class="quick-chat-wrap" aria-live="polite">
         <div id="quickChatTooltip" class="quick-chat-tooltip" role="status">
-            <div class="tooltip-text">How can I help you?</div>
+            <div class="tooltip-text">Chat Now</div>
             <button id="quickChatClose" class="tooltip-close" aria-label="Close tooltip">&times;</button>
         </div>
 
@@ -306,6 +306,7 @@
         (function() {
             const waNumber = '919913447761';
             const defaultMessage = 'Hello I want to know more about your services';
+            const wrap = document.querySelector('.quick-chat-wrap');
             const chatBtn = document.getElementById('quickChatBtn');
             const tooltip = document.getElementById('quickChatTooltip');
             const closeBtn = document.getElementById('quickChatClose');
@@ -313,6 +314,14 @@
             function openWhatsApp() {
                 const url = `https://wa.me/${waNumber}?text=${encodeURIComponent(defaultMessage)}`;
                 window.open(url, '_blank');
+            }
+
+            function showTooltip() {
+                if (tooltip) tooltip.classList.remove('hidden');
+            }
+
+            function hideTooltip() {
+                if (tooltip) tooltip.classList.add('hidden');
             }
 
             // Click WhatsApp button -> open chat
@@ -324,7 +333,7 @@
             // Close tooltip (hide)
             if (closeBtn) closeBtn.addEventListener('click', function(e) {
                 e.stopPropagation();
-                tooltip.classList.add('hidden');
+                hideTooltip();
             });
 
             // Clicking tooltip (not close) opens chat
@@ -333,10 +342,14 @@
                 openWhatsApp();
             });
 
-            // Auto-hide tooltip after 6s
-            // setTimeout(() => {
-            //     if (tooltip) tooltip.classList.add('hidden');
-            // }, 6000);
+            // Auto-hide tooltip after 5s
+            setTimeout(hideTooltip, 5000);
+
+            // Hovering the widget shows the tooltip again
+            if (wrap) {
+                wrap.addEventListener('mouseenter', showTooltip);
+                wrap.addEventListener('mouseleave', hideTooltip);
+            }
         })();
     </script>
     @stack('scripts')

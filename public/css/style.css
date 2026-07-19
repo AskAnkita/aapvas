@@ -804,6 +804,23 @@ body.cursor-hover .cursor-dot {
     object-fit: cover;
     display: block;
 }
+.service-card-icon {
+    display: inline-block;
+    font-size: 1.7rem;
+    color: #ff6200 !important;
+}
+.service-card-title {
+    color: #ff6200;
+    font-size: 1rem;
+    font-weight: 600;
+    margin-bottom: 0.35rem;
+}
+.service-card-desc {
+    color: #5c6a86;
+    font-size: 0.82rem;
+    line-height: 1.4;
+    margin-bottom: 0;
+}
 /* social / contact icon brand colors */
 .icon-linkedin {
     color: #0a66c2 !important;
@@ -848,29 +865,19 @@ body.cursor-hover .cursor-dot {
     vertical-align: middle;
 } */
 
-/* Infinite auto-scrolling testimonial slider */
-.testimonial-slider-wrap {
-    display: flex;
-    align-items: center;
-    gap: 12px;
-}
-.testimonial-slider {
-    flex: 1;
-    overflow: hidden;
-    cursor: grab;
-}
-.testimonial-slider.dragging {
-    cursor: grabbing;
-}
-.testimonial-track {
-    display: flex;
+/* Static testimonial grid — 4 per row on desktop */
+.testimonial-grid {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr);
     gap: 2rem;
-    width: max-content;
-    will-change: transform;
-    backface-visibility: hidden;
+}
+@media (max-width: 991px) {
+    .testimonial-grid { grid-template-columns: repeat(2, 1fr); }
+}
+@media (max-width: 575px) {
+    .testimonial-grid { grid-template-columns: 1fr; }
 }
 .testimonial-card {
-    flex: 0 0 360px;
     display: flex;
     flex-direction: column;
     background: #fff;
@@ -919,7 +926,7 @@ body.cursor-hover .cursor-dot {
     font-size: 0.95rem;
 }
 @media (max-width: 480px) {
-    .testimonial-card { flex-basis: 280px; padding: 1.75rem; }
+    .testimonial-card { padding: 1.75rem; }
 }
 /* Shared arrow button style — used by both the testimonial and client sliders */
 .slider-arrow {

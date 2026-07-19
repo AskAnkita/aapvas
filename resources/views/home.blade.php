@@ -168,7 +168,7 @@
                             <img src="{{ asset('assets/images/clients/dv-survivors.png') }}"
                                 class="transition" alt="Client 1">
                         </div>
-                        <div class="client-logo-tile dark">
+                        <div class="client-logo-tile bg-[#0274be]">
                             <img src="{{ asset('assets/images/clients/NEW-UK-2025-VM-Logo-all-white-on-trans.png') }}"
                                 class="transition" alt="Client 5">
                         </div>
@@ -188,6 +188,10 @@
                             <img src="{{ asset('assets/images/clients/meenaoverseas.png') }}"
                                 class="transition" alt="Client 3">
                         </div>
+                        <div class="client-logo-tile dark">
+                            <img src="{{ asset('assets/images/clients/macropay-logo01.svg') }}"
+                                class="transition" alt="Macropay">
+                        </div>
                     </div>
                 </div>
 
@@ -197,61 +201,68 @@
             <!-- Testimonials -->
             <h3 class="text-3xl font-bold mb-10" data-aos="fade-up">What Our Clients Say</h3>
 
-            <div class="testimonial-slider-wrap">
-                <button type="button" class="slider-arrow testimonial-arrow-prev" aria-label="Previous testimonial">&#8249;</button>
+            <div class="testimonial-grid">
 
-                <div class="testimonial-slider" id="testimonialSlider">
-                    <div class="testimonial-track" id="testimonialTrack">
-
-                        <!-- Testimonial 1 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="italic mb-0">
-                                I've worked with them in the past many times and I can tell you that Ajay is someone you want on your team and has a skill set way beyond the description in this post...
-                            </p>
-                            <div class="testimonial-footer">
-                                <div class="testimonial-avatar">AC</div>
-                                <div class="text-left">
-                                    <p class="font-semibold mb-0">Adam J Clarke</p>
-                                    <span class="text-sm">Macropay [Founder]</span>
-                                </div>
-                            </div>
+                <!-- Testimonial 1 -->
+                <div class="testimonial-card" data-aos="fade-up">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="italic mb-0">
+                        I've worked with them in the past many times and I can tell you that Ajay is someone you want on your team and has a skill set way beyond the description in this post...
+                    </p>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-avatar">AC</div>
+                        <div class="text-left">
+                            <p class="font-semibold mb-0">Adam J Clarke</p>
+                            <span class="text-sm">Macropay [Founder]</span>
                         </div>
-
-                        <!-- Testimonial 2 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="italic mb-0">
-                                Their service is afable, fluent in English, smart and motivated. Highly recommended.
-                            </p>
-                            <div class="testimonial-footer">
-                                <div class="testimonial-avatar">LH</div>
-                                <div class="text-left">
-                                    <p class="font-semibold mb-0">Ludwig Haskins</p>
-                                    <span class="text-sm">The Sam Haskins Estate [Owner]</span>
-                                </div>
-                            </div>
-                        </div>
-
-                        <!-- Testimonial 3 -->
-                        <div class="testimonial-card">
-                            <div class="testimonial-stars">★★★★★</div>
-                            <p class="italic mb-0">
-                                Very helpful. You are definitely very motivated and helpful.
-                            </p>
-                            <div class="testimonial-footer">
-                                <div class="testimonial-avatar">MP</div>
-                                <div class="text-left">
-                                    <p class="font-semibold mb-0">Mia Forbes Pirie</p>
-                                    <span class="text-sm">Lares Partners [Co-founder]</span>
-                                </div>
-                            </div>
-                        </div>
-
                     </div>
                 </div>
 
-                <button type="button" class="slider-arrow testimonial-arrow-next" aria-label="Next testimonial">&#8250;</button>
+                <!-- Testimonial 2 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="italic mb-0">
+                        Their service is afable, fluent in English, smart and motivated. Highly recommended.
+                    </p>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-avatar">LH</div>
+                        <div class="text-left">
+                            <p class="font-semibold mb-0">Ludwig Haskins</p>
+                            <span class="text-sm">The Sam Haskins Estate [Founder]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 3 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="italic mb-0">
+                        Very helpful. You are definitely very motivated and helpful.
+                    </p>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-avatar">MP</div>
+                        <div class="text-left">
+                            <p class="font-semibold mb-0">Mia Forbes Pirie</p>
+                            <span class="text-sm">The Conversations Coach [Founder]</span>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Testimonial 4 -->
+                <div class="testimonial-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="testimonial-stars">★★★★★</div>
+                    <p class="italic mb-0">
+                        I’m extremely grateful for the help and support I received.
+                    </p>
+                    <div class="testimonial-footer">
+                        <div class="testimonial-avatar">AC</div>
+                        <div class="text-left">
+                            <p class="font-semibold mb-0">Peter Middleton</p>
+                            <span class="text-sm">Video Mastary [Founder]</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
 
         </div>
@@ -372,16 +383,6 @@
         }
 
         document.addEventListener('DOMContentLoaded', function () {
-            initInfiniteSlider({
-                sliderId: 'testimonialSlider',
-                trackId: 'testimonialTrack',
-                prevSelector: '.testimonial-arrow-prev',
-                nextSelector: '.testimonial-arrow-next',
-                repeat: 6,
-                speed: 0.5,
-                step: 392, // card width (360) + gap (32)
-            });
-
             initInfiniteSlider({
                 sliderId: 'clientSlider',
                 trackId: 'clientTrack',

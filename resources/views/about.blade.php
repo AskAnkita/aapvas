@@ -45,7 +45,7 @@
       <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
         <div class="float-media">
           <span class="float-media-blob"></span>
-          <img src="{{ asset('assets/images/about-us-banner.jpg') }}"
+          <img src="{{ asset('assets/images/about-us-banner.png') }}"
             alt="The Assist and Promote team supporting clients remotely" class="float-media-img">
           <div class="float-media-badge">
             <span class="badge-star">⭐ 4.9 / 5</span>
