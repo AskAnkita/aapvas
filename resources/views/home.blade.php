@@ -59,7 +59,7 @@
 
                 <div class="stat-row mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="stat">
-                        <span class="stat-num">6+</span>
+                        <span class="stat-num">10+</span>
                         <span class="stat-label">Service Areas</span>
                     </div>
                     <div class="stat">
@@ -182,14 +182,13 @@
                 <!-- Testimonial 1 -->
                 <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300" data-aos="zoom-in">
                     <p class="italic mb-6">
-                        "BizBud has been a game-changer for managing my coaching business. Highly recommend!"
+                        "I've worked with with them in the past many times and I can tell you that Ajay is someone you want on your team and has a skill set way beyond the description in this post..."
                     </p>
                     <div class="flex items-center justify-center gap-4">
                         {{-- <img src="https://via.placeholder.com/60" class="w-12 h-12 rounded-full" alt="Jane"> --}}
-                        <div class="text-left">
-                            <p class="font-semibold">Jane Doe</p>
-                            <span class="text-sm">Business
-                                Coach</span>
+                        <div class="text-center">
+                            <p class="font-semibold">Adam J Clarke</p>
+                            <span class="text-sm">Macropay [Founder]</span>
                         </div>
                     </div>
                 </div>
@@ -198,14 +197,14 @@
                 <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300" data-aos="zoom-in"
                     data-aos-delay="200">
                     <p class="italic mb-6">
-                        "Their virtual assistants are highly professional and proactive. Amazing support!"
+                        "Their service is afable, fluent in English, smart and motivated. Highly recommended."
                     </p>
                     <div class="flex items-center justify-center gap-4">
                         {{-- <img src="https://via.placeholder.com/60" class="w-12 h-12 rounded-full" alt="John"> --}}
-                        <div class="text-left">
-                            <p class="font-semibold">John Smith</p>
+                        <div class="text-center">
+                            <p class="font-semibold">Ludwig Haskins</p>
                             <span class="text-sm">
-                                Founder</span>
+                                The Sam Haskins Estate [Owner]]</span>
                         </div>
                     </div>
                 </div>
@@ -214,14 +213,14 @@
                 <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300" data-aos="zoom-in"
                     data-aos-delay="400">
                     <p class="italic mb-6">
-                        "They take care of operations so I can focus on scaling my business."
+                        "Very helpful. You are definitely very motivated and helpful."
                     </p>
                     <div class="flex items-center justify-center gap-4">
                         {{-- <img src="https://via.placeholder.com/60" class="w-12 h-12 rounded-full" alt="Emily"> --}}
-                        <div class="text-left">
-                            <p class="font-semibold">Emily Brown</p>
+                        <div class="text-center">
+                            <p class="font-semibold">Mia Forbes Pirie</p>
                             <span class="text-sm">
-                                Entrepreneur</span>
+                                Lares Partners [Co-founder]</span>
                         </div>
                     </div>
                     

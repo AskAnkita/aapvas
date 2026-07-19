@@ -510,6 +510,67 @@ body {
     }
 }
 
+/* Numbered step badge (circle) — used in place of bare display-4 numbers */
+.step-number-badge {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+    background: #1a2b49;
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 800;
+    font-size: 1.3rem;
+    margin: 0 auto 18px;
+    box-shadow: 0 8px 20px rgba(26, 43, 73, 0.25);
+}
+
+/* Feature icon circle — Why Choose Us cards */
+.feature-icon {
+    width: 64px;
+    height: 64px;
+    border-radius: 50%;
+    background: rgba(255, 98, 0, 0.1);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 18px;
+}
+.feature-icon i {
+    font-size: 1.75rem;
+    color: #ff6200;
+}
+
+/* Mission pull-quote card */
+.mission-quote {
+    position: relative;
+    background: #fff;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(26, 43, 73, 0.08);
+    padding: 56px 48px;
+    max-width: 760px;
+    margin: 0 auto;
+}
+.mission-quote .quote-mark {
+    font-size: 2.75rem;
+    color: #ff6200;
+    opacity: 0.35;
+    line-height: 1;
+    display: block;
+    margin-bottom: 12px;
+}
+.mission-quote p {
+    font-size: 1.25rem;
+    color: #1a2b49;
+    line-height: 1.7;
+    font-weight: 500;
+}
+@media (max-width: 576px) {
+    .mission-quote { padding: 40px 24px; }
+    .mission-quote p { font-size: 1.1rem; }
+}
+
 /* Custom cursor */
 body.custom-cursor-active {
     cursor: none;

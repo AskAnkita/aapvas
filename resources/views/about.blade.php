@@ -61,28 +61,37 @@
 <!-- 2️⃣ Why Choose Us -->
 <section class="py-5 bg-gray-50">
   <div class="container">
+    <p class="section-eyebrow text-center">The AAPVAS Difference</p>
     <h2 class="fw-bold text-center mb-3" style="color: #1a2b49;">Why Choose Us?</h2>
     <div class="underline mx-auto mb-5" style="background: #ff6200;"></div>
-    <div class="row text-center">
-      <div class="col-md-3 mb-4">
-        <span class="bullet" style="background: #ff6200;"></span>
-        <h5 style="color: #1a2b49;">Skilled Assistants</h5>
-        <p class="text-muted">Trained professionals ready to handle your business tasks with precision.</p>
+    <div class="row text-center g-4">
+      <div class="col-md-3" data-aos="fade-up">
+        <div class="card border-0 shadow h-100 p-4">
+          <div class="feature-icon"><i class="bi bi-person-check-fill"></i></div>
+          <h5 style="color: #1a2b49;">Skilled Assistants</h5>
+          <p class="text-muted mb-0">Trained professionals ready to handle your business tasks with precision.</p>
+        </div>
       </div>
-      <div class="col-md-3 mb-4">
-        <span class="bullet" style="background: #ff6200;"></span>
-        <h5 style="color: #1a2b49;">Flexible Support</h5>
-        <p class="text-muted">Hourly, weekly, or monthly support tailored to your needs.</p>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="100">
+        <div class="card border-0 shadow h-100 p-4">
+          <div class="feature-icon"><i class="bi bi-clock-history"></i></div>
+          <h5 style="color: #1a2b49;">Flexible Support</h5>
+          <p class="text-muted mb-0">Hourly, weekly, or monthly support tailored to your needs.</p>
+        </div>
       </div>
-      <div class="col-md-3 mb-4">
-        <span class="bullet" style="background: #ff6200;"></span>
-        <h5 style="color: #1a2b49;">Affordable Pricing</h5>
-        <p class="text-muted">Transparent pricing plans with no hidden costs.</p>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="200">
+        <div class="card border-0 shadow h-100 p-4">
+          <div class="feature-icon"><i class="bi bi-tag-fill"></i></div>
+          <h5 style="color: #1a2b49;">Affordable Pricing</h5>
+          <p class="text-muted mb-0">Transparent pricing plans with no hidden costs.</p>
+        </div>
       </div>
-      <div class="col-md-3 mb-4">
-        <span class="bullet" style="background: #ff6200;"></span>
-        <h5 style="color: #1a2b49;">Trusted by Clients</h5>
-        <p class="text-muted">Serving businesses across industries with reliability and care.</p>
+      <div class="col-md-3" data-aos="fade-up" data-aos-delay="300">
+        <div class="card border-0 shadow h-100 p-4">
+          <div class="feature-icon"><i class="bi bi-shield-check"></i></div>
+          <h5 style="color: #1a2b49;">Trusted by Clients</h5>
+          <p class="text-muted mb-0">Serving businesses across industries with reliability and care.</p>
+        </div>
       </div>
     </div>
   </div>
@@ -91,62 +100,67 @@
 <!-- 3️⃣ Mission Section -->
 <section class="py-5 bg-gray-50">
   <div class="container text-center">
+    <p class="section-eyebrow text-center">Our Purpose</p>
     <h2 class="fw-bold mb-3" style="color: #1a2b49;">Our Mission</h2>
-    <div class="underline mx-auto mb-4" style="background: #ff6200;"></div>
-    <p class="lead text-muted" style="color: #4b5563;">
-      To empower businesses by providing cost-effective, professional, and flexible virtual support.
-      We believe every business deserves the right assistance to thrive without unnecessary overheads.
-    </p>
+    <div class="underline mx-auto mb-5" style="background: #ff6200;"></div>
+    <div class="mission-quote" data-aos="fade-up">
+      <i class="bi bi-quote quote-mark"></i>
+      <p class="mb-0">
+        To empower businesses by providing cost-effective, professional, and flexible virtual support.
+        We believe every business deserves the right assistance to thrive without unnecessary overheads.
+      </p>
+    </div>
   </div>
 </section>
 
 <!-- 4️⃣ Steps Section -->
   <section class="py-5 bg-light">
         <div class="container">
+            <p class="section-eyebrow text-center">The Process</p>
             <h2 class="fw-bold text-center mb-3">How it works</h2>
             <div class="underline mx-auto mb-5"></div>
 
-            <div class="row text-center">
+            <div class="row steps-row text-center">
 
                 <!-- Step 1 -->
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4" data-aos="fade-up">
                     <div class="card border-0 shadow h-100 p-4">
-                        <div class="step-number display-4 fw-bold text-primary mb-3">1</div>
+                        <div class="step-number-badge">1</div>
                         <h5>Choose a Plan</h5>
-                        <p class="text-muted">
+                        <p class="text-muted mb-0">
                             Select a pricing plan that best suits your business needs and budget.
                         </p>
                     </div>
                 </div>
 
                 <!-- Step 2 -->
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="100">
                     <div class="card border-0 shadow h-100 p-4">
-                        <div class="step-number display-4 fw-bold text-primary mb-3">2</div>
+                        <div class="step-number-badge">2</div>
                         <h5>Tell Us Your Requirements</h5>
-                        <p class="text-muted">
+                        <p class="text-muted mb-0">
                             Share your tasks, goals, and expectations so we can align perfectly with your workflow.
                         </p>
                     </div>
                 </div>
 
                 <!-- Step 3 -->
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="200">
                     <div class="card border-0 shadow h-100 p-4">
-                        <div class="step-number display-4 fw-bold text-primary mb-3">3</div>
+                        <div class="step-number-badge">3</div>
                         <h5>We Assign a VA</h5>
-                        <p class="text-muted">
+                        <p class="text-muted mb-0">
                             A skilled and dedicated Virtual Assistant is assigned to you for seamless support.
                         </p>
                     </div>
                 </div>
 
                 <!-- Step 4 -->
-                <div class="col-md-3 mb-4">
+                <div class="col-md-3 mb-4" data-aos="fade-up" data-aos-delay="300">
                     <div class="card border-0 shadow h-100 p-4">
-                        <div class="step-number display-4 fw-bold text-primary mb-3">4</div>
+                        <div class="step-number-badge">4</div>
                         <h5>Save Time & Grow</h5>
-                        <p class="text-muted">
+                        <p class="text-muted mb-0">
                             Focus on scaling your business while we handle the tasks that slow you down.
                         </p>
                     </div>
