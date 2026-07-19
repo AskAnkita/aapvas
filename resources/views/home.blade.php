@@ -153,78 +153,105 @@
         <div class="container mx-auto px-4 text-center">
 
             <!-- Clients -->
-            <p class="section-eyebrow" data-aos="fade-up">Client Love</p>
+            <p class="section-eyebrow" data-aos="fade-up">Client's Love</p>
             <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">Trusted Clients</h2>
             <p class="text-lg mb-10" data-aos="fade-up" data-aos-delay="200">
                 Proudly supporting global entrepreneurs, coaches, and businesses.
             </p>
 
-            <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-20" data-aos="zoom-in" data-aos-delay="400">
-                <div class="client-logo-tile">
-                    <img src="{{ asset('assets/images/clients/dv-survivors.png') }}"
-                        class="grayscale hover:grayscale-0 transition" alt="Client 1">
+            <div class="client-slider-wrap mb-20" data-aos="zoom-in" data-aos-delay="400">
+                <button type="button" class="slider-arrow client-arrow-prev" aria-label="Previous client">&#8249;</button>
+
+                <div class="client-slider" id="clientSlider">
+                    <div class="client-track" id="clientTrack">
+                        <div class="client-logo-tile">
+                            <img src="{{ asset('assets/images/clients/dv-survivors.png') }}"
+                                class="transition" alt="Client 1">
+                        </div>
+                        <div class="client-logo-tile dark">
+                            <img src="{{ asset('assets/images/clients/NEW-UK-2025-VM-Logo-all-white-on-trans.png') }}"
+                                class="transition" alt="Client 5">
+                        </div>
+                        <div class="client-logo-tile">
+                            <img src="{{ asset('assets/images/clients/theconversationscoach.png') }}"
+                                class="transition" alt="Client 2">
+                        </div>
+                        <div class="client-logo-tile">
+                            <img src="{{ asset('assets/images/clients/logo.png') }}"
+                                class="transition" alt="RealiteQ">
+                        </div>
+                        <div class="client-logo-tile dark">
+                            <img src="{{ asset('assets/images/clients/yossi_logo_en.svg') }}"
+                                class="transition" alt="Client 6">
+                        </div>
+                        <div class="client-logo-tile">
+                            <img src="{{ asset('assets/images/clients/meenaoverseas.png') }}"
+                                class="transition" alt="Client 3">
+                        </div>
+                    </div>
                 </div>
-                <div class="client-logo-tile">
-                    <img src="{{ asset('assets/images/clients/theconversationscoach.png') }}"
-                        class="grayscale hover:grayscale-0 transition" alt="Client 2">
-                </div>
-                <div class="client-logo-tile">
-                    <img src="{{ asset('assets/images/clients/meenaoverseas.png') }}"
-                        class="grayscale hover:grayscale-0 transition" alt="Client 3">
-                </div>
+
+                <button type="button" class="slider-arrow client-arrow-next" aria-label="Next client">&#8250;</button>
             </div>
 
             <!-- Testimonials -->
             <h3 class="text-3xl font-bold mb-10" data-aos="fade-up">What Our Clients Say</h3>
 
-            <div class="grid grid-cols-1 md:grid-cols-3 gap-8">
+            <div class="testimonial-slider-wrap">
+                <button type="button" class="slider-arrow testimonial-arrow-prev" aria-label="Previous testimonial">&#8249;</button>
 
-                <!-- Testimonial 1 -->
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300" data-aos="zoom-in">
-                    <p class="italic mb-6">
-                        "I've worked with with them in the past many times and I can tell you that Ajay is someone you want on your team and has a skill set way beyond the description in this post..."
-                    </p>
-                    <div class="flex items-center justify-center gap-4">
-                        {{-- <img src="https://via.placeholder.com/60" class="w-12 h-12 rounded-full" alt="Jane"> --}}
-                        <div class="text-center">
-                            <p class="font-semibold">Adam J Clarke</p>
-                            <span class="text-sm">Macropay [Founder]</span>
+                <div class="testimonial-slider" id="testimonialSlider">
+                    <div class="testimonial-track" id="testimonialTrack">
+
+                        <!-- Testimonial 1 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="italic mb-0">
+                                I've worked with them in the past many times and I can tell you that Ajay is someone you want on your team and has a skill set way beyond the description in this post...
+                            </p>
+                            <div class="testimonial-footer">
+                                <div class="testimonial-avatar">AC</div>
+                                <div class="text-left">
+                                    <p class="font-semibold mb-0">Adam J Clarke</p>
+                                    <span class="text-sm">Macropay [Founder]</span>
+                                </div>
+                            </div>
                         </div>
+
+                        <!-- Testimonial 2 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="italic mb-0">
+                                Their service is afable, fluent in English, smart and motivated. Highly recommended.
+                            </p>
+                            <div class="testimonial-footer">
+                                <div class="testimonial-avatar">LH</div>
+                                <div class="text-left">
+                                    <p class="font-semibold mb-0">Ludwig Haskins</p>
+                                    <span class="text-sm">The Sam Haskins Estate [Owner]</span>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Testimonial 3 -->
+                        <div class="testimonial-card">
+                            <div class="testimonial-stars">★★★★★</div>
+                            <p class="italic mb-0">
+                                Very helpful. You are definitely very motivated and helpful.
+                            </p>
+                            <div class="testimonial-footer">
+                                <div class="testimonial-avatar">MP</div>
+                                <div class="text-left">
+                                    <p class="font-semibold mb-0">Mia Forbes Pirie</p>
+                                    <span class="text-sm">Lares Partners [Co-founder]</span>
+                                </div>
+                            </div>
+                        </div>
+
                     </div>
                 </div>
 
-                <!-- Testimonial 2 -->
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300" data-aos="zoom-in"
-                    data-aos-delay="200">
-                    <p class="italic mb-6">
-                        "Their service is afable, fluent in English, smart and motivated. Highly recommended."
-                    </p>
-                    <div class="flex items-center justify-center gap-4">
-                        {{-- <img src="https://via.placeholder.com/60" class="w-12 h-12 rounded-full" alt="John"> --}}
-                        <div class="text-center">
-                            <p class="font-semibold">Ludwig Haskins</p>
-                            <span class="text-sm">
-                                The Sam Haskins Estate [Owner]]</span>
-                        </div>
-                    </div>
-                </div>
-
-                <!-- Testimonial 3 -->
-                <div class="bg-white p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300" data-aos="zoom-in"
-                    data-aos-delay="400">
-                    <p class="italic mb-6">
-                        "Very helpful. You are definitely very motivated and helpful."
-                    </p>
-                    <div class="flex items-center justify-center gap-4">
-                        {{-- <img src="https://via.placeholder.com/60" class="w-12 h-12 rounded-full" alt="Emily"> --}}
-                        <div class="text-center">
-                            <p class="font-semibold">Mia Forbes Pirie</p>
-                            <span class="text-sm">
-                                Lares Partners [Co-founder]</span>
-                        </div>
-                    </div>
-                    
-                </div>
+                <button type="button" class="slider-arrow testimonial-arrow-next" aria-label="Next testimonial">&#8250;</button>
             </div>
 
         </div>
@@ -244,6 +271,126 @@
                 heroVideo.pause();
                 heroVideo.removeAttribute('autoplay');
             }
+        });
+
+        // Infinite auto-scrolling slider — driven entirely by a GPU-composited
+        // CSS transform (not scrollLeft, which forces a layout recalc on every
+        // frame and visibly flickers in Safari). Auto-plays, pauses for manual
+        // drag/touch/wheel/arrow interaction, then resumes. The set is repeated
+        // several times and `offset` is left to grow forever — we only ever
+        // render `offset mod (one set's width)` — so the loop is mathematically
+        // seamless with no reset moment for the eye to catch, indefinitely.
+        function initInfiniteSlider(opts) {
+            const slider = document.getElementById(opts.sliderId);
+            const track = document.getElementById(opts.trackId);
+            if (!slider || !track) return;
+
+            const reduceMotion = window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+            const REPEAT = opts.repeat || 6;
+            const SPEED = opts.speed || 0.5;
+            const step = opts.step || 300;
+
+            const originalHTML = track.innerHTML;
+            track.innerHTML = originalHTML.repeat(REPEAT);
+
+            let offset = 0; // ever-increasing/decreasing; never reset
+            let autoPlay = !reduceMotion;
+            let isDown = false;
+            let startX = 0;
+            let startOffset = 0;
+            let resumeTimer = null;
+
+            function applyTransform() {
+                const setWidth = track.scrollWidth / REPEAT;
+                let shown = offset % setWidth;
+                if (shown > 0) shown -= setWidth;
+                track.style.transform = 'translateX(' + shown + 'px)';
+            }
+
+            function tick() {
+                if (autoPlay && !isDown) {
+                    offset -= SPEED;
+                    applyTransform();
+                }
+                requestAnimationFrame(tick);
+            }
+            requestAnimationFrame(tick);
+
+            function pauseThenResume(delay) {
+                autoPlay = false;
+                clearTimeout(resumeTimer);
+                resumeTimer = setTimeout(function () { autoPlay = true; }, delay || 3000);
+            }
+
+            function dragStart(pageX) {
+                isDown = true;
+                slider.classList.add('dragging');
+                startX = pageX;
+                startOffset = offset;
+                pauseThenResume();
+            }
+            function dragMove(pageX) {
+                if (!isDown) return;
+                offset = startOffset + (pageX - startX);
+                applyTransform();
+            }
+            function dragEnd() {
+                isDown = false;
+                slider.classList.remove('dragging');
+            }
+
+            slider.addEventListener('mousedown', function (e) { dragStart(e.pageX); });
+            window.addEventListener('mouseup', dragEnd);
+            window.addEventListener('mousemove', function (e) {
+                if (!isDown) return;
+                e.preventDefault();
+                dragMove(e.pageX);
+            });
+
+            slider.addEventListener('touchstart', function (e) {
+                dragStart(e.touches[0].pageX);
+            }, { passive: true });
+            slider.addEventListener('touchmove', function (e) {
+                dragMove(e.touches[0].pageX);
+            }, { passive: true });
+            window.addEventListener('touchend', dragEnd);
+
+            slider.addEventListener('wheel', function () { pauseThenResume(); }, { passive: true });
+
+            const prevBtn = document.querySelector(opts.prevSelector);
+            const nextBtn = document.querySelector(opts.nextSelector);
+            if (prevBtn) prevBtn.addEventListener('click', function () {
+                pauseThenResume();
+                offset += step;
+                applyTransform();
+            });
+            if (nextBtn) nextBtn.addEventListener('click', function () {
+                pauseThenResume();
+                offset -= step;
+                applyTransform();
+            });
+        }
+
+        document.addEventListener('DOMContentLoaded', function () {
+            initInfiniteSlider({
+                sliderId: 'testimonialSlider',
+                trackId: 'testimonialTrack',
+                prevSelector: '.testimonial-arrow-prev',
+                nextSelector: '.testimonial-arrow-next',
+                repeat: 6,
+                speed: 0.5,
+                step: 392, // card width (360) + gap (32)
+            });
+
+            initInfiniteSlider({
+                sliderId: 'clientSlider',
+                trackId: 'clientTrack',
+                prevSelector: '.client-arrow-prev',
+                nextSelector: '.client-arrow-next',
+                repeat: 6,
+                speed: 0.35,
+                step: 196, // tile width (180) + gap (16)
+            });
         });
     </script>
 @endpush

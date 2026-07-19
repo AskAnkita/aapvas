@@ -38,6 +38,10 @@
     color: #ff6200 !important; /* Override inline active color */
 }
 
+.navbar .nav-link:hover {
+    color: #ff6200 !important;
+}
+
 /* Button styling with higher specificity */
 .navbar .btn-call {
     padding: 0.5rem 1.5rem !important;
@@ -454,6 +458,10 @@ body {
     height: auto;
     object-fit: contain;
 }
+/* For client logos supplied white-on-transparent — a white tile would hide them */
+.client-logo-tile.dark {
+    background: #1a2b49;
+}
 @media (max-width: 480px) {
     .client-logo-tile { width: 140px; height: 80px; padding: 10px; }
 }
@@ -481,12 +489,13 @@ body {
     display: inline-flex;
     align-items: center;
     justify-content: center;
-    width: 34px;
-    height: 34px;
+    width: 38px;
+    height: 38px;
     border-radius: 50%;
     background: rgba(255, 98, 0, 0.1);
     margin-right: 10px;
     flex-shrink: 0;
+    overflow: hidden;
 }
 
 /* How It Works — connecting timeline line behind numbered steps */
@@ -738,14 +747,33 @@ body.cursor-hover .cursor-dot {
 }
 
 /* Quick-nav chips under the services hero */
+/* Services hero quick-nav — forced into exactly 2 rows regardless of
+   viewport width, instead of letting flex-wrap break unpredictably across
+   2 or 3 lines depending on chip widths. */
+.service-quicknav {
+    display: grid;
+    grid-template-columns: repeat(2, max-content);
+    justify-content: center;
+    gap: 0.5rem 0.75rem;
+}
+@media (min-width: 576px) {
+    .service-quicknav { grid-template-columns: repeat(3, max-content); }
+}
+@media (min-width: 992px) {
+    .service-quicknav {
+        grid-template-columns: repeat(6, max-content);
+        justify-content: start;
+    }
+}
+
 .service {
     background: rgba(255, 255, 255, 0.14);
     backdrop-filter: blur(8px);
     border: 1px solid rgba(255, 255, 255, 0.28);
     color: #fff;
-    padding: 0.5rem 1rem;
+    padding: 0.4rem 0.85rem;
     border-radius: 1.25rem;
-    font-size: 0.85rem;
+    font-size: 0.78rem;
     white-space: nowrap;
     text-align: center;
     transition: background-color 0.3s, color 0.3s, border-color 0.3s;
@@ -819,3 +847,127 @@ body.cursor-hover .cursor-dot {
     display: inline-block;
     vertical-align: middle;
 } */
+
+/* Infinite auto-scrolling testimonial slider */
+.testimonial-slider-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.testimonial-slider {
+    flex: 1;
+    overflow: hidden;
+    cursor: grab;
+}
+.testimonial-slider.dragging {
+    cursor: grabbing;
+}
+.testimonial-track {
+    display: flex;
+    gap: 2rem;
+    width: max-content;
+    will-change: transform;
+    backface-visibility: hidden;
+}
+.testimonial-card {
+    flex: 0 0 360px;
+    display: flex;
+    flex-direction: column;
+    background: #fff;
+    padding: 2.25rem;
+    border-radius: 16px;
+    box-shadow: 0 10px 30px rgba(26, 43, 73, 0.08);
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+    white-space: normal;
+    text-align: left;
+}
+.testimonial-card:hover {
+    box-shadow: 0 18px 40px rgba(26, 43, 73, 0.14);
+    transform: translateY(-4px);
+}
+.testimonial-quote-icon {
+    font-size: 1.9rem;
+    color: #ff6200;
+    opacity: 0.3;
+    display: block;
+    margin-bottom: 0.5rem;
+}
+.testimonial-stars {
+    color: #ff6200;
+    font-size: 0.85rem;
+    letter-spacing: 2px;
+    margin-bottom: 0.75rem;
+}
+.testimonial-footer {
+    display: flex;
+    align-items: center;
+    gap: 0.9rem;
+    margin-top: auto;
+    padding-top: 1.25rem;
+}
+.testimonial-avatar {
+    width: 46px;
+    height: 46px;
+    flex-shrink: 0;
+    border-radius: 50%;
+    background: linear-gradient(135deg, #1a2b49, #ff6200);
+    color: #fff;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-weight: 700;
+    font-size: 0.95rem;
+}
+@media (max-width: 480px) {
+    .testimonial-card { flex-basis: 280px; padding: 1.75rem; }
+}
+/* Shared arrow button style — used by both the testimonial and client sliders */
+.slider-arrow {
+    flex-shrink: 0;
+    width: 44px;
+    height: 44px;
+    border-radius: 50%;
+    border: 1px solid rgba(26, 43, 73, 0.15);
+    background: #fff;
+    color: #1a2b49;
+    font-size: 1.5rem;
+    line-height: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    cursor: pointer;
+    transition: background 0.2s ease, color 0.2s ease, border-color 0.2s ease;
+}
+.slider-arrow:hover {
+    background: #ff6200;
+    border-color: #ff6200;
+    color: #fff;
+}
+@media (max-width: 767px) {
+    .slider-arrow {
+        display: none;
+    }
+}
+
+/* Trusted Clients — infinite auto-scrolling logo slider (same transform-driven
+   mechanism as the testimonial slider: smooth in Safari, seamless indefinite loop) */
+.client-slider-wrap {
+    display: flex;
+    align-items: center;
+    gap: 12px;
+}
+.client-slider {
+    flex: 1;
+    overflow: hidden;
+    cursor: grab;
+}
+.client-slider.dragging {
+    cursor: grabbing;
+}
+.client-track {
+    display: flex;
+    gap: 1rem;
+    width: max-content;
+    will-change: transform;
+    backface-visibility: hidden;
+}

@@ -31,21 +31,53 @@
                     </div>
 
                     <ul class="list-unstyled">
-                        <li class="mb-3 d-flex align-items-center"><span class="icon-chip"><i class="fas fa-envelope icon-gmail"></i></span> <a
-                                href="mailto:info@assistandpromote.com"
-                                class="text-decoration-none">info@assistandpromote.com</a></li>
-                        <li class="mb-3 d-flex align-items-center"><span class="icon-chip"><i class="fas fa-phone-alt icon-phone"></i></span> +91 99134 47761</li>
-                        <li class="mb-3 d-flex align-items-center"><span class="icon-chip"><i class="fas fa-map-marker-alt icon-location"></i></span> Surat, Gujarat, India
+                        <li class="mb-3 d-flex align-items-center">
+                            <span class="icon-chip">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="52 26 88 66" class="w-5 h-5 min-w-[20px]">
+                                <!-- Left Blue Column -->
+                                <path fill="#4285f4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/>
+                                <!-- Right Green Column -->
+                                <path fill="#34a853" d="M120 108h14c3.32 0 6-2.69 6-6V59l-20 15"/>
+                                <!-- Top Right Corner / Yellow Shoulder -->
+                                <path fill="#fbbc04" d="M120 48v26l20-15v-8c0-7.42-8.47-11.65-14.4-7.2"/>
+                                <!-- Center Red Valley / Roof -->
+                                <path fill="#ea4335" d="M72 74V48l24 18 24-18v26L96 92"/>
+                                <!-- Top Left Corner / Dark Red Shoulder -->
+                                <path fill="#c5221f" d="M52 51v8l20 15V48l-5.6-4.2c-5.94-4.45-14.4-.22-14.4 7.2"/>
+                            </svg>
+                            </span>
+                            <a href="mailto:info@assistandpromote.com" class="text-decoration-none">info@assistandpromote.com</a>
                         </li>
-                        <li class="mb-3 d-flex align-items-center"><span class="icon-chip"><i class="fab fa-linkedin icon-linkedin"></i></span> <a
-                                href="https://www.linkedin.com/in/ajay2210" target="_blank"
-                                class="text-decoration-none">LinkedIn</a></li>
-                        <li class="mb-3 d-flex align-items-center"><span class="icon-chip"><i class="fab fa-facebook icon-facebook"></i></span> <a
-                                href="https://www.facebook.com/assistandpromote/" target="_blank"
-                                class="text-decoration-none">Facebook</a></li>
-                        <li class="mb-3 d-flex align-items-center"><span class="icon-chip"><i class="fab fa-whatsapp icon-whatsapp"></i></span> <a
-                                href="https://wa.me/919913447761?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services"
-                                target="_blank" class="text-decoration-none">WhatsApp Us</a></li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <span class="icon-chip"><i class="fas fa-phone-alt icon-phone"></i></span>
+                            +91 99134 47761
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <span class="icon-chip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 min-w-[20px]">
+                            <!-- Red Top Loop -->
+                            <path fill="#EA4335" d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
+                            <!-- Green Bottom Shadow/Base -->
+                            <path fill="#34A853" d="M12 22s-7-7.75-7-13c0-.34.03-.67.08-1L12 16.5l6.92-8.5c.05.33.08.66.08 1 0 5.25-7 13-7 13z" opacity="0.15" />
+                            <!-- Yellow Left Accent -->
+                            <path fill="#FBBC05" d="M5.08 8C5.61 5.39 7.89 3.5 10.7 3.12L5.08 8z" opacity="0.2" />
+                            <!-- Blue Center Dot -->
+                            <path fill="#4285F4" d="M12 6.5c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5z" />
+                            </svg></span>
+                            Surat, Gujarat, India
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <span class="icon-chip"><i class="fab fa-linkedin icon-linkedin"></i></span>
+                            <a href="https://www.linkedin.com/in/ajay2210" target="_blank" class="text-decoration-none">LinkedIn</a>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <span class="icon-chip"><i class="fab fa-facebook icon-facebook"></i></span>
+                            <a href="https://www.facebook.com/assistandpromote/" target="_blank" class="text-decoration-none">Facebook</a>
+                        </li>
+                        <li class="mb-3 d-flex align-items-center">
+                            <span class="icon-chip"><i class="fab fa-whatsapp icon-whatsapp"></i></span>
+                            <a href="https://wa.me/919913447761?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services"
+                                target="_blank" class="text-decoration-none">WhatsApp Us</a>
+                        </li>
                     </ul>
 
                 </div>

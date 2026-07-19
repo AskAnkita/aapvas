@@ -29,13 +29,19 @@
             </div>
 
             <!-- Quick nav to service cards below -->
-            <div class="service-quicknav d-flex flex-wrap gap-2 mt-4">
+            <div class="service-quicknav mt-4">
                 <span class="service" data-target="linked-in">LinkedIn Support</span>
-                <span class="service" data-target="admin-support">Administrative Support</span>
+                <span class="service" data-target="admin-support">Admin Support</span>
                 <span class="service" data-target="email-calendar">Email Management</span>
-                <span class="service" data-target="social-media">Social Media Management</span>
-                <span class="service" data-target="web-dev">Web Development</span>
+                <span class="service" data-target="social-media">Social Media</span>
+                <span class="service" data-target="web-dev">Web & Software</span>
                 <span class="service" data-target="online-marketing">Online Marketing</span>
+                <span class="service" data-target="book-keeping">Book Keeping</span>
+                <span class="service" data-target="real-estate">Real Estate</span>
+                <span class="service" data-target="virtual-receptionist">Virtual Receptionist</span>
+                <span class="service" data-target="recruitment">Recruitment</span>
+                <span class="service" data-target="medical-transcription">Medical Billing</span>
+                <span class="service" data-target="personal-assistance">Personal Assistance</span>
             </div>
         </div>
     </div>
@@ -45,7 +51,7 @@
         <div class="container">
             <p class="section-eyebrow text-center">What We Do</p>
             <h2 class="text-xl sm:text-2xl md:text-3xl font-bold text-center mb-2 sm:mb-3 md:mb-5">What We Offer</h2>
-            <div class="underline mx-auto w-16 sm:w-20 md:w-24 h-1 bg-[#ff6200] mb-2 sm:mb-3 md:mb-5"></div>
+            <div class="underline mx-auto w-16 sm:w-20 md:w-24 h-1 bg-[#ff6200] mb-6 sm:mb-8 md:mb-12"></div>
             <div class="row g-4 text-center">
 
 
@@ -108,15 +114,16 @@
                     </div>
                 </div>
 
-                <!-- Web Development -->
+                <!-- Web & Software Development -->
                 <div class="col-12 col-sm-6 col-md-4 mb-4">
                     <div id="web-dev" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
-                        <img src="{{ asset('assets/images/cards/web-development.jpg') }}" class="service-card-img" alt="Web Development">
+                        <img src="{{ asset('assets/images/cards/web-development.jpg') }}" class="service-card-img" alt="Web & Software Development">
                         <div class="p-3 sm:p-4 text-center">
                             <div class="mb-2 sm:mb-3"><i class="bi bi-code-slash display-5 sm:display-4 text-primary"></i></div>
-                            <h5 class="text-lg sm:text-xl">Web Development</h5>
-                            <p class="text-muted text-sm sm:text-base">Custom website and web application development tailored
-                                to your business needs, fully responsive and user-friendly.</p>
+                            <h5 class="text-lg sm:text-xl">Web & Software Development</h5>
+                            <p class="text-muted text-sm sm:text-base">From e-commerce stores and hosting setup to custom
+                                web development and full software builds, we handle the technical side so your
+                                business runs smoothly online.</p>
                         </div>
                     </div>
                 </div>
@@ -130,6 +137,84 @@
                             <h5 class="text-lg sm:text-xl">Online Marketing</h5>
                             <p class="text-muted text-sm sm:text-base">Boost your brand online through SEO, PPC, email
                                 campaigns, and other digital marketing strategies.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Book Keeping -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div id="book-keeping" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
+                        <img src="{{ asset('assets/images/cards/bookkeeping.jpg') }}" class="service-card-img" alt="Book Keeping">
+                        <div class="p-3 sm:p-4 text-center">
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-journal-check display-5 sm:display-4 text-primary"></i></div>
+                            <h5 class="text-lg sm:text-xl">Book Keeping</h5>
+                            <p class="text-muted text-sm sm:text-base">Accurate, up-to-date financial records — invoices,
+                                expenses, and reconciliation handled so your books are always audit-ready.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Real Estate Backend Management -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div id="real-estate" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
+                        <img src="{{ asset('assets/images/cards/real-estate-management.jpg') }}" class="service-card-img" alt="Real Estate Backend Management">
+                        <div class="p-3 sm:p-4 text-center">
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-building display-5 sm:display-4 text-primary"></i></div>
+                            <h5 class="text-lg sm:text-xl">Real Estate Backend Management</h5>
+                            <p class="text-muted text-sm sm:text-base">Listings, documentation, client follow-ups, and
+                                transaction paperwork managed behind the scenes for busy real estate professionals.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Virtual Receptionist -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div id="virtual-receptionist" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
+                        <img src="{{ asset('assets/images/cards/virtual-receptionist.jpg') }}" class="service-card-img" alt="Virtual Receptionist">
+                        <div class="p-3 sm:p-4 text-center">
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-telephone-fill display-5 sm:display-4 text-primary"></i></div>
+                            <h5 class="text-lg sm:text-xl">Virtual Receptionist</h5>
+                            <p class="text-muted text-sm sm:text-base">A professional, welcoming voice for every call —
+                                answering, screening, and routing so no client is ever left waiting.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Recruitment Backend Management -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div id="recruitment" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
+                        <img src="{{ asset('assets/images/cards/recruitment-management.jpg') }}" class="service-card-img" alt="Recruitment Backend Management">
+                        <div class="p-3 sm:p-4 text-center">
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-person-plus-fill display-5 sm:display-4 text-primary"></i></div>
+                            <h5 class="text-lg sm:text-xl">Recruitment Backend Management</h5>
+                            <p class="text-muted text-sm sm:text-base">Resume screening, interview scheduling, and
+                                candidate coordination — we keep your hiring pipeline moving without the busywork.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Medical Transcription and Billing -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div id="medical-transcription" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
+                        <img src="{{ asset('assets/images/cards/medical-transcription-billing.jpg') }}" class="service-card-img" alt="Medical Transcription and Billing">
+                        <div class="p-3 sm:p-4 text-center">
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-file-earmark-medical-fill display-5 sm:display-4 text-primary"></i></div>
+                            <h5 class="text-lg sm:text-xl">Medical Transcription & Billing</h5>
+                            <p class="text-muted text-sm sm:text-base">Accurate transcription and billing support for
+                                healthcare practices, handled with care and strict attention to detail.</p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- Personal Assistance -->
+                <div class="col-12 col-sm-6 col-md-4 mb-4">
+                    <div id="personal-assistance" class="card border-0 shadow h-100 p-0 service-card overflow-hidden">
+                        <img src="{{ asset('assets/images/cards/personal-assistance.jpg') }}" class="service-card-img" alt="Personal Assistance">
+                        <div class="p-3 sm:p-4 text-center">
+                            <div class="mb-2 sm:mb-3"><i class="bi bi-person-check-fill display-5 sm:display-4 text-primary"></i></div>
+                            <h5 class="text-lg sm:text-xl">Personal Assistance</h5>
+                            <p class="text-muted text-sm sm:text-base">Calendar management, travel planning, and day-to-day
+                                organization so you can focus on what only you can do.</p>
                         </div>
                     </div>
                 </div>
