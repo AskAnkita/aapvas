@@ -5,29 +5,66 @@
 @section('content')
 
     <!-- 1️⃣ Hero Section -->
-    <div class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2" data-aos="fade-right">
-                <img src="{{ asset('assets/images/pricing-banner-removebg.png') }}" class="w-1/2 price-banner rounded-lg"
-                    alt="Pricing">
-            </div>
-            <div class="md:w-1/2 mt-6 md:mt-0 md:pl-8" data-aos="fade-left" data-aos-delay="200">
-                <h2 class="fw-bold display-5">Virtual Assistant Service Plans</h2>
-                <h4 class="mb-3">
-                    We offer flexible plans designed to suit your business needs.
-                    The more hours you book, the lower your effective hourly cost.
-                </h4>
-                <a href="{{ route('about') }}"
-                    class="btn btn-primary">
-                    Learn More About Us
-                </a>
+    <section class="hero-split hero-full-bleed bg-white">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <!-- Left: Text -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <p class="section-eyebrow">Transparent, Hourly-Based Pricing</p>
+                    <h1 class="fw-bold hero-split-title">Virtual Assistant Service Plans</h1>
+                    <p class="hero-split-copy mb-3">
+                        We offer flexible plans designed to suit your business needs. The more hours you book,
+                        the lower your effective hourly cost.
+                    </p>
+                    <p class="hero-split-copy">
+                        No two businesses run the same way, so no two engagements should look the same either.
+                        Pick a plan that matches how much support you need today, then scale up or down as your
+                        workload changes — every plan includes a dedicated assistant matched to your workflow,
+                        not a rotating pool of strangers.
+                    </p>
+
+                    <div class="stat-row" data-aos="fade-up" data-aos-delay="150">
+                        <div class="stat">
+                            <span class="stat-num">3</span>
+                            <span class="stat-label">Flexible Plans</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">0</span>
+                            <span class="stat-label">Long-Term Lock-in</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">100%</span>
+                            <span class="stat-label">Transparent Pricing</span>
+                        </div>
+                    </div>
+
+                    <a href="{{ route('about') }}" class="btn-primary d-inline-block mt-4" data-aos="fade-up" data-aos-delay="250">
+                        Learn More About Us
+                    </a>
+                </div>
+
+                <!-- Right: Floating image + badge -->
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+                    <div class="float-media">
+                        <span class="float-media-blob"></span>
+                        <img src="{{ asset('assets/images/pricing-hero.jpg') }}"
+                            alt="Tracking business growth with a dedicated virtual assistant" class="float-media-img">
+                        <div class="float-media-badge">
+                            <span class="badge-star">💰 Month-to-Month</span>
+                            <span class="badge-text">No contracts, cancel anytime</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
-    </div>
+    </section>
 
     <!-- 2️⃣ Pricing Section -->
     <div class="py-5 bg-light">
         <div class="container text-center">
+            <p class="section-eyebrow text-center">Plans</p>
             <h2 class="fw-bold mb-3">Choose Your Plan</h2>
             <div class="underline mx-auto mb-5"></div>
 
@@ -35,7 +72,7 @@
 
                 <!-- Plan A – Starter -->
                 <div class="col-md-4 mb-4">
-                    <div class="card border-0 shadow h-100 p-5 rounded-lg"> <!-- p-5 instead of p-4 -->
+                    <div class="card pricing-card border-0 shadow h-100 p-5 rounded-lg"> <!-- p-5 instead of p-4 -->
                         <h4 class="fw-bold mb-3">Plan A – Starter (Minimum Hours)</h4>
 
                         <p class="fw-bold mb-3" style="line-height: 1.6;">
@@ -66,7 +103,8 @@
 
                 <!-- Plan B – Growth -->
                 <div class="col-md-4 mb-4">
-                    <div class="card border-0 shadow h-100 p-5 rounded-lg"> <!-- p-5 instead of p-4 -->
+                    <div class="card pricing-card popular border-0 shadow h-100 p-5 rounded-lg position-relative"> <!-- p-5 instead of p-4 -->
+                        <span class="ribbon-badge">Most Popular</span>
                         <h4 class="fw-bold mb-3">Plan B – Growth (Half Day)</h4>
 
                         <p class="fw-bold  mb-3" style="line-height: 1.6;">
@@ -98,7 +136,7 @@
 
                 <!-- Plan C – Enterprise -->
                 <div class="col-md-4 mb-4">
-                    <div class="card border-0 shadow h-100 p-5 rounded-lg"> <!-- p-5 instead of p-4 -->
+                    <div class="card pricing-card border-0 shadow h-100 p-5 rounded-lg"> <!-- p-5 instead of p-4 -->
                         <h4 class="fw-bold mb-3">Plan C – Enterprise (Full Day)</h4>
 
                         <p class="fw-bold  mb-3" style="line-height: 1.6;">

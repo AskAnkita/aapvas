@@ -2,70 +2,72 @@
 
 @section('content')
     <!-- 1️⃣ Hero Section -->
-    <div class="hero-section relative bg-white h-[90vh] flex items-center overflow-hidden pt-0 pb-0">
-        <div class="container mx-auto py-4 px-4 relative z-10">
-            <div class="flex flex-col md:flex-row items-center text-center md:text-left">
-                {{-- <div class="md:w-1/2">
-                    <h1 class="text-5xl md:text-6xl font-bold mb-6" data-aos="fade-up">
-                       
-                    </h1>
-                    <p class="text-xl mb-8" data-aos="fade-up" data-aos-delay="200">
-                       
-                    </p>
-                    <a href="{{ route('contact') }}" class="btn-primary transition duration-300" data-aos="fade-up"
-                        data-aos-delay="400">
-                        
-                    </a>
-                </div> --}}
-                <div class="lg:w-1/2 text-center lg:text-left">
-                    <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold text-dark mb-4" data-aos="fade-up">
-                        Smart Virtual Assistance to Help Your Business Grow<br>
-                        <span class="text-primary">for Your Business</span>
-                    </h1>
-                    <p class="text-lg mb-6 text-tertiary" data-aos="fade-up" data-aos-delay="200">
-                        Save time, cut costs, and boost productivity with our professional virtual assistant services
-                        tailored for entrepreneurs, startups, and <strong>growing businesses.</strong>.
-                    </p>
-                    <a href="{{ route('contact') }}" class="btn-primary" data-aos="fade-up" data-aos-delay="400">
-                        Book a Call
-                    </a>
-                </div>
-                <div class="md:w-1/2 hidden md:block">
-                    <img src="{{ asset('assets/images/service-banner-removebg.png') }}" alt="Virtual Assistant"
-                        class="banner-image bg-transparent mx-auto animate__animated animate__fadeIn" data-aos="zoom-in"
-                        data-aos-delay="600">
-                </div>
+    <div class="video-hero-wrap hero-full-bleed">
+        <video class="video-hero-video" id="homeHeroVideo" autoplay muted loop playsinline
+            poster="{{ asset('assets/images/home-hero-poster.jpg') }}">
+            <source src="{{ asset('assets/videos/home-hero.mp4') }}" type="video/mp4">
+        </video>
+        <div class="video-hero-overlay"></div>
+
+        <div class="relative z-10 container mx-auto px-4">
+            <div class="lg:w-1/2 text-left lg:text-left">
+                <p class="section-eyebrow" data-aos="fade-up">Virtual Assistant Services</p>
+                <h1 class="text-4xl md:text-5xl lg:text-6xl font-bold mb-4" style="color:#fff;" data-aos="fade-up">
+                    Smart Virtual Assistance to Help Your Business Grow<br>
+                    <span style="color:#ff6200;">for Your Business</span>
+                </h1>
+                <p class="text-lg mb-6" style="color:#e5e7eb;" data-aos="fade-up" data-aos-delay="200">
+                    Save time, cut costs, and boost productivity with our professional virtual assistant services
+                    tailored for entrepreneurs, startups, and <strong>growing businesses.</strong>.
+                </p>
+                <a href="{{ route('contact') }}" class="btn-primary" data-aos="fade-up" data-aos-delay="400">
+                    Book a Call
+                </a>
             </div>
         </div>
     </div>
 
     <!-- 2️⃣ About Section -->
-    <div class="min-h-screen bg-orange-50 flex items-center py-16">
+    <div class="hero-split bg-orange-50">
 
         <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
 
             <!-- Image -->
             <div class="md:w-1/2" data-aos="fade-right">
-                <img src="{{ asset('assets/images/What-Does-a-Virtual-Assistant-Do.jpg') }}"
-                    class="w-full md:w-3/4 rounded-lg shadow-md mx-auto" alt="About Us">
+                <div class="float-media">
+                    <span class="float-media-blob"></span>
+                    <img src="{{ asset('assets/images/What-Does-a-Virtual-Assistant-Do.jpg') }}"
+                        class="float-media-img" alt="A virtual assistant supporting a client on a video call">
+                    <div class="float-media-badge">
+                        <span class="badge-star">150+</span>
+                        <span class="badge-text">Businesses helped so far</span>
+                    </div>
+                </div>
             </div>
 
             <!-- Content -->
             <div class="md:w-1/2 mt-6 md:mt-0 md:pl-8" data-aos="fade-left" data-aos-delay="200">
-                <h2 class="text-4xl font-bold mb-6">Who We Are</h2>
+                <p class="section-eyebrow">Who We Are</p>
+                <h2 class="hero-split-title fw-bold">A team that runs your busywork, not just tasks</h2>
 
-                <p class="text-lg mb-4">
+                <p class="hero-split-copy mb-4">
                     We are a passionate team of virtual support professionals dedicated to helping entrepreneurs,
                     coaches, and small businesses operate smoothly and scale effectively. Our mission is to remove your
                     administrative, operational, and digital burden so you can focus on what truly matters — growing
                     your business.
                 </p>
-                <p class="text-lg mb-6">
-                    With years of experience in business support, customer operations, and digital productivity, we
-                    bring structure, organization, and strategy to your daily workflow. Whether you are a startup founder,
-                    a busy executive, or a solopreneur, we tailor our assistance to fit your systems, your goals, and your
-                    pace.
-                </p>
+
+                <div class="stat-row mb-4" data-aos="fade-up" data-aos-delay="100">
+                    <div class="stat">
+                        <span class="stat-num">6+</span>
+                        <span class="stat-label">Service Areas</span>
+                    </div>
+                    <div class="stat">
+                        <span class="stat-num">4.9/5</span>
+                        <span class="stat-label">Client Rating</span>
+                    </div>
+                </div>
+
                 <a href="{{ route('about') }}"
                     class="btn-primary inline-block bg-orange-500 text-white font-semibold py-2 px-6 rounded-full hover:bg-orange-600">
                     Learn More About Us
@@ -75,9 +77,10 @@
         </div>
     </div>
     <!-- 3️⃣ Services Section -->
-    <div class="min-h-screen flex items-center py-20 bg-white">
+    <div class="flex items-center py-12 md:py-16 bg-white">
 
         <div class="container mx-auto px-4 text-center">
+            <p class="section-eyebrow" data-aos="fade-up">What We Do</p>
             <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">Our Services</h2>
             <p class="text-lg mb-12" data-aos="fade-up" data-aos-delay="200">
                 High-quality professional assistance tailored to support your business growth and productivity.
@@ -127,8 +130,8 @@
                 @foreach ($services as $service)
                     <div class="bg-gray-50 p-8 rounded-lg shadow-md hover:shadow-lg transition duration-300 icon-box justify-center mx-auto"
                         data-aos="fade-up">
-                        <i class="{{ $service['icon'] }} text-4xl text-orange-500 mb-4"></i>
-                        <h3 class="text-2xl font-semibold text-orange-500 mb-4">{{ $service['title'] }}</h3>
+                        <i class="{{ $service['icon'] }} text-4xl text-primary mb-4"></i>
+                        <h3 class="text-2xl font-semibold text-primary mb-4">{{ $service['title'] }}</h3>
                         <p class="mb-4">
                             {{ $service['description'] }}
                         </p>
@@ -145,25 +148,30 @@
     </div>
 
     <!-- Clients & Testimonials Section -->
-    <div class="min-h-screen flex flex-col justify-center py-20 bg-gray-50">
+    <div class="flex flex-col justify-center py-12 md:py-16 bg-gray-50">
 
         <div class="container mx-auto px-4 text-center">
 
             <!-- Clients -->
+            <p class="section-eyebrow" data-aos="fade-up">Client Love</p>
             <h2 class="text-4xl font-bold mb-6" data-aos="fade-up">Trusted Clients</h2>
             <p class="text-lg mb-10" data-aos="fade-up" data-aos-delay="200">
                 Proudly supporting global entrepreneurs, coaches, and businesses.
             </p>
 
-            <div class="grid grid-cols-3 md:grid-cols-3 gap-8 justify-between mb-20" data-aos="zoom-in" data-aos-delay="400">
-                <img src="{{ asset('assets/images/clients/dv-survivors.png') }}"
-                    class="h-20 object-contain grayscale hover:grayscale-0 transition" alt="Client 1">
-                <img src="{{ asset('assets/images/clients/theconversationscoach.png') }}"
-                    class="h-20 object-contain grayscale hover:grayscale-0 transition" alt="Client 2">
-                <img src="{{ asset('assets/images/clients/meenaoverseas.png') }}"
-                    class="h-20 object-contain grayscale hover:grayscale-0 transition" alt="Client 3">
-                {{-- <img src="{{ asset('assets/images/clients/theconversationscoach.png') }}"
-                    class="h-20 object-contain grayscale hover:grayscale-0 transition" alt="Client 4"> --}}
+            <div class="d-flex flex-wrap justify-content-center align-items-center gap-4 mb-20" data-aos="zoom-in" data-aos-delay="400">
+                <div class="client-logo-tile">
+                    <img src="{{ asset('assets/images/clients/dv-survivors.png') }}"
+                        class="grayscale hover:grayscale-0 transition" alt="Client 1">
+                </div>
+                <div class="client-logo-tile">
+                    <img src="{{ asset('assets/images/clients/theconversationscoach.png') }}"
+                        class="grayscale hover:grayscale-0 transition" alt="Client 2">
+                </div>
+                <div class="client-logo-tile">
+                    <img src="{{ asset('assets/images/clients/meenaoverseas.png') }}"
+                        class="grayscale hover:grayscale-0 transition" alt="Client 3">
+                </div>
             </div>
 
             <!-- Testimonials -->
@@ -228,3 +236,15 @@
     <!-- Include Font Awesome for social icons -->
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
 @endsection
+
+@push('scripts')
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            const heroVideo = document.getElementById('homeHeroVideo');
+            if (heroVideo && window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+                heroVideo.pause();
+                heroVideo.removeAttribute('autoplay');
+            }
+        });
+    </script>
+@endpush

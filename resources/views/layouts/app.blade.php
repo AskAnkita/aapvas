@@ -69,7 +69,7 @@
     </nav>
 
     <!-- Content -->
-    <main class="container-fluid my-5 pt-5" style="min-height: 100vh;">
+    <main class="container-fluid mt-5 pt-5" style="min-height: 100vh;">
         @yield('content')
     </main>
 
@@ -151,22 +151,46 @@
     <!-- Google Fonts -->
     <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap"
         rel="stylesheet">
+    @php
+        // Bump this whenever css/js changes, so browsers fetch fresh copies instead of
+        // serving a week-old cached one under the server's max-age=604800. A plain string
+        // (not filemtime()) so this works regardless of whether public_path() actually
+        // resolves to a real folder on a given deployment.
+        $assetVer = '20260719-2';
+    @endphp
     <!-- Custom CSS -->
-    <link rel="stylesheet" href="{{ asset('css/style.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/theme.css') }}">
-    <link rel="stylesheet" href="{{ asset('css/custom.css') }}">
+    <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ $assetVer }}">
+    <link rel="stylesheet" href="{{ asset('css/theme.css') }}?v={{ $assetVer }}">
+    <link rel="stylesheet" href="{{ asset('css/custom.css') }}?v={{ $assetVer }}">
     <!-- Font Awesome for WhatsApp icon -->
     <link href="https://cdn.jsdelivr.net/npm/@fortawesome/fontawesome-free@6.4.0/css/all.min.css" rel="stylesheet">
     <!-- Custom JS -->
-    <script src="{{ asset('js/custom.js') }}" crossorigin="anonymous"></script>
+    <script src="{{ asset('js/custom.js') }}?v={{ $assetVer }}" crossorigin="anonymous"></script>
+
+    @if (env('GOOGLE_ANALYTICS_ID'))
+        <!-- Google Analytics (GA4) -->
+        <script async src="https://www.googletagmanager.com/gtag/js?id={{ env('GOOGLE_ANALYTICS_ID') }}"></script>
+        <script>
+            window.dataLayer = window.dataLayer || [];
+            function gtag() { dataLayer.push(arguments); }
+            gtag('js', new Date());
+            gtag('config', '{{ env('GOOGLE_ANALYTICS_ID') }}');
+        </script>
+    @endif
 </head>
 
 <body class="bg-gradient-to-br from-gray-50 to-white font-poppins">
     <!-- Navbar -->
     <nav
-        class="navbar navbar-expand-lg {{ request()->routeIs('home') ? 'bg-white bg-opacity-90' : 'bg-gray-50' }} fixed-top shadow-md">
+        class="navbar navbar-expand-lg {{ request()->routeIs('home') ? 'bg-white bg-opacity-90' : 'bg-gray-50' }} fixed-top shadow-md p-0">
         <div class="container mx-auto px-4"> <!-- Use mx-auto and px-4 for consistent padding -->
-            <a class="navbar-brand" href="{{ route('home') }}"><b>AAPVAS</b></a>
+            <a class="navbar-brand d-flex flex-column align-items-center justify-content-center" href="{{ route('home') }}" style="line-height: 1;">
+                <svg width="60" height="60" viewBox="0 0 100 100" aria-hidden="true" focusable="false">
+                    <polygon points="50,16 84,84 66,84 50,50 34,84 16,84" fill="#1a2b49" opacity="0.5" />
+                    <polygon points="50,26 78,84 62,84 50,58 38,84 22,84" fill="#ff6200" />
+                </svg>
+                <b style="font-size: 0.95rem; letter-spacing: 1px; margin-top: 1px;">AAP<span style="color: #ff6200;">VAS</span></b>
+            </a>
             <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
                 aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
                 <span class="navbar-toggler-icon"></span>
@@ -189,27 +213,26 @@
                         <a class="nav-link {{ request()->routeIs('contact') ? 'active fw-bold' : '' }}"
                             href="{{ route('contact') }}" style="color: #1a2b49;">Contact Us</a>
                     </li>
-                    <!-- Chat Now button for mobile, inside the menu -->
+                    <!-- Book a Call button for mobile, inside the menu -->
                     <li class="nav-item d-block d-lg-none mt-2 ">
-                        <buton {{-- <a href="https://wa.me/919913447761?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services" --}} target="_blank" class="btn btn-call w-100 text-center">
+                        <a href="{{ route('contact') }}"
+                            class="btn btn-call w-100 text-center {{ request()->routeIs('contact') ? 'active' : '' }}">
                             Book a Call
-                            {{-- </a> --}}
-                        </buton>
+                        </a>
                     </li>
                 </ul>
-                <!-- Chat Now button for desktop, outside the menu -->
-                {{-- <a href="https://wa.me/919913447761?text=Hello%20I%20want%20to%20know%20more%20about%20your%20services" --}}
-                <button target="_blank" class="btn btn-call ms-3 d-none d-lg-inline-block text-nowrap">
+                <!-- Book a Call button for desktop, outside the menu -->
+                <a href="{{ route('contact') }}"
+                    class="btn btn-call ms-3 d-none d-lg-inline-block text-nowrap {{ request()->routeIs('contact') ? 'active' : '' }}">
                     Book a Call
-                </button>
-                {{-- </a> --}}
+                </a>
 
             </div>
         </div>
     </nav>
 
     <!-- Content -->
-    <main class="container-fluid my-5 pt-5" style="min-height: 100vh;">
+    <main class="container-fluid mt-5 pt-5" style="min-height: 100vh;">
         @yield('content')
     </main>
 

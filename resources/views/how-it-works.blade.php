@@ -5,22 +5,53 @@
 @section('content')
 
     <!-- 1️⃣ Hero Section -->
-    <section class="py-16 bg-gray-100">
-        <div class="container mx-auto px-4 flex flex-col md:flex-row items-center">
-            <div class="md:w-1/2" data-aos="fade-right">
-                <img src="{{ asset('assets/images/What-Does-a-Virtual-Assistant-Do.jpg') }}"
-                    class="w-3/4 rounded-lg shadow-md" alt="About Us">
-            </div>
-            <div class="md:w-1/2 mt-6 md:mt-0 md:pl-8" data-aos="fade-left" data-aos-delay="200">
-              <h2 class="fw-bold display-5">HOW IT WORKS</h2>
-                <h4 class="mb-3">
-                    Getting started with <strong>Assist and Promote</strong> is easy.
-                    In just a few simple steps, you’ll have a dedicated virtual assistant supporting your business.
-                </h4>
-                <a href="{{ route('about') }}"
-                    class="btn inline-block bg-orange-500 text-white font-semibold py-2 px-6 rounded-full hover:bg-orange-600">
-                    Learn More About Us
-                </a>
+    <section class="hero-split hero-full-bleed bg-gray-100">
+        <div class="container">
+            <div class="row align-items-center g-5">
+
+                <!-- Left: Text -->
+                <div class="col-lg-6" data-aos="fade-right">
+                    <p class="section-eyebrow">How It Works</p>
+                    <h1 class="fw-bold hero-split-title">Up and running in four simple steps</h1>
+                    <p class="hero-split-copy">
+                        Getting started with <strong>Assist and Promote</strong> is easy. In just a few simple
+                        steps, you’ll have a dedicated virtual assistant supporting your business.
+                    </p>
+
+                    <div class="stat-row" data-aos="fade-up" data-aos-delay="150">
+                        <div class="stat">
+                            <span class="stat-num">4</span>
+                            <span class="stat-label">Simple Steps</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">48h</span>
+                            <span class="stat-label">Avg. Onboarding</span>
+                        </div>
+                        <div class="stat">
+                            <span class="stat-num">100%</span>
+                            <span class="stat-label">Match Guarantee</span>
+                        </div>
+                    </div>
+
+                    <a href="{{ route('about') }}"
+                        class="btn-primary d-inline-block mt-4" data-aos="fade-up" data-aos-delay="250">
+                        Learn More About Us
+                    </a>
+                </div>
+
+                <!-- Right: Floating image + badge -->
+                <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
+                    <div class="float-media">
+                        <span class="float-media-blob"></span>
+                        <img src="{{ asset('assets/images/What-Does-a-Virtual-Assistant-Do.jpg') }}"
+                            class="float-media-img" alt="A dedicated virtual assistant getting started with a client">
+                        <div class="float-media-badge">
+                            <span class="badge-star">Step 1 of 4</span>
+                            <span class="badge-text">Choose a plan to get started</span>
+                        </div>
+                    </div>
+                </div>
+
             </div>
         </div>
     </section>
@@ -28,10 +59,11 @@
     <!-- 2️⃣ Steps Section -->
     <section class="py-5 bg-light">
         <div class="container">
+            <p class="section-eyebrow text-center">The Process</p>
             <h2 class="fw-bold text-center mb-3">Our Process</h2>
             <div class="underline mx-auto mb-5"></div>
 
-            <div class="row text-center">
+            <div class="row steps-row text-center">
 
                 <!-- Step 1 -->
                 <div class="col-md-3 mb-4">

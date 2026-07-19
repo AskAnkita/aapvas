@@ -3,7 +3,17 @@
 /* Target navbar specifically */
 .navbar {
     transition: all 0.3s ease;
-    padding: 1rem 0;
+}
+
+.navbar-brand {
+    font-size: 1.5rem !important;
+    font-weight: 700 !important;
+    letter-spacing: 1px;
+    color: #1a2b49 !important;
+}
+
+.navbar-brand b {
+    font-weight: 700;
 }
 
 /* .navbar.transparent {
@@ -41,6 +51,15 @@
     background-color: #1a2b49 !important; /* Dark navy blue on hover */
 }
 
+.navbar .btn-call.active {
+    background-color: #1a2b49 !important; /* Same navy as hover — signals "you're already here" */
+}
+.navbar .btn-call.active::after {
+    content: "✓";
+    margin-left: 6px;
+    font-weight: 700;
+}
+
 /* Only for md and lg screen */
 .hero-section {
     border-bottom: 1px solid #ff7f00;
@@ -72,7 +91,7 @@
     background-color: #ff6200 !important;
     color: #fff !important;
     padding: 12px 30px !important;
-    border-radius: 10px !important;
+     border-radius: 9999px !important;
     font-weight: 500 !important;
     transition: all 0.3s ease !important;
 }
@@ -81,14 +100,9 @@
     opacity: 0.9 !important;
 }
 
-/* Footer */
-footer {
-    background-color: #1a2b49; /* Dark navy blue */
-    color: white;
-    text-align: center;
-    padding: 20px;
-    margin-top: 40px;
-}
+/* Footer spacing/color comes entirely from the Tailwind classes on the
+   <footer> element in layouts/app.blade.php — no bare-tag overrides here,
+   so every page gets the same, single source of spacing. */
 
 .primary-color {
     color: #1a2b49; /* Dark navy blue */
@@ -241,57 +255,448 @@ footer {
         width: 100%;
     }
 }
-/* Full section background */
-.service-banner {
-    margin: 0;
-    padding: 0;
-    font-family: "Poppins", sans-serif;
-    min-height: 85vh; /* full viewport */
-    color: white;
-    background: url("../assets/images/virtual-assistant-landing-page.jpg")
-        no-repeat center center/cover;
+/* Full-bleed hero — breaks a hero section out of <main>'s container-fluid
+   gutters and its mt-5/pt-5 navbar-clearance spacing, so it spans the true
+   viewport edge-to-edge (like the Home hero already did, just by accident
+   of matching background colors). padding-top gives back the same amount
+   of clearance margin-top removes, so inner content doesn't move. */
+.hero-full-bleed {
+    width: 100vw;
     position: relative;
-    overflow: hidden;
+    left: 50%;
+    right: 50%;
+    margin-left: -50vw;
+    margin-right: -50vw;
+    margin-top: -96px;
+    padding-top: 96px;
+    min-height: 100vh !important;
+    box-sizing: border-box;
+}
+/* .hero-split isn't height/flex-centered like the video heroes are, so on
+   its own 96px isn't enough to clear the fixed navbar once pulled up —
+   add back the section's original 80px design padding on top of that, and
+   center its content within the new full-viewport height. */
+.hero-full-bleed.hero-split {
+    padding-top: 176px;
+    display: flex;
+    align-items: center;
+}
+.hero-full-bleed.hero-split > .container {
+    width: 100%;
+}
+body {
+    overflow-x: hidden;
 }
 
-/* Dark overlay */
-.service-banner::after {
-    content: "";
+/* Global eyebrow label — used above section headings site-wide */
+.section-eyebrow {
+    color: #ff6200;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    font-size: 0.85rem;
+    margin-bottom: 10px;
+    display: block;
+}
+
+/* Reusable split hero — clean text + floating image card (About, Home teaser, How It Works hero) */
+.hero-split {
+    padding: 80px 0 96px;
+}
+@media (max-width: 767px) {
+    .hero-split {
+        padding: 56px 0 96px;
+    }
+}
+
+.hero-split-title {
+    color: #1a2b49;
+    font-size: clamp(2rem, 4vw, 2.75rem);
+    line-height: 1.15;
+    margin-bottom: 14px;
+}
+.hero-split-copy {
+    color: #5c6a86;
+    font-size: 1.05rem;
+    line-height: 1.7;
+    max-width: 520px;
+}
+
+.stat-row {
+    display: flex;
+    gap: 28px;
+    margin-top: 18px;
+    flex-wrap: wrap;
+}
+.stat-row .stat {
+    display: flex;
+    flex-direction: column;
+    padding-right: 28px;
+    border-right: 1px solid rgba(26, 43, 73, 0.12);
+}
+.stat-row .stat:last-child {
+    border-right: none;
+    padding-right: 0;
+}
+.stat-row .stat-num {
+    font-size: 1.6rem;
+    font-weight: 800;
+    color: #1a2b49;
+    line-height: 1.1;
+}
+.stat-row .stat-label {
+    font-size: 0.72rem;
+    color: #5c6a86;
+    text-transform: uppercase;
+    letter-spacing: 0.04em;
+    margin-top: 4px;
+}
+
+.float-media {
+    position: relative;
+    padding: 20px;
+}
+.float-media-blob {
     position: absolute;
+    top: -30px;
+    right: -30px;
+    width: 240px;
+    height: 240px;
+    background: radial-gradient(circle at 30% 30%, rgba(255, 98, 0, 0.25), rgba(26, 43, 73, 0.1) 70%);
+    filter: blur(30px);
+    border-radius: 50%;
+    z-index: 0;
+    animation: floatMediaBlobDrift 10s ease-in-out infinite;
+}
+.float-media-blob.blob-static {
+    animation: none;
+}
+.float-media-img {
+    position: relative;
+    z-index: 1;
+    display: block;
+    width: 100%;
+    height: 420px;
+    object-fit: cover;
+    border-radius: 20px;
+    box-shadow: 0 20px 50px rgba(26, 43, 73, 0.18);
+    animation: floatMediaImgFloat 6s ease-in-out infinite;
+}
+.float-media-badge {
+    position: absolute;
+    left: 0px;
+    bottom: -20px;
+    z-index: 2;
+    background: #fff;
+    border-radius: 14px;
+    padding: 14px 18px;
+    box-shadow: 0 14px 30px rgba(26, 43, 73, 0.16);
+    display: flex;
+    flex-direction: column;
+    gap: 2px;
+    min-width: 180px;
+    animation: floatMediaImgFloat 5s ease-in-out infinite;
+    animation-delay: 0.6s;
+}
+.float-media-badge .badge-star {
+    font-weight: 700;
+    color: #1a2b49;
+    font-size: 0.95rem;
+}
+.float-media-badge .badge-text {
+    font-size: 0.75rem;
+    color: #5c6a86;
+}
+
+@keyframes floatMediaImgFloat {
+    0%, 100% { transform: translateY(0); }
+    50% { transform: translateY(-14px); }
+}
+@keyframes floatMediaBlobDrift {
+    0%, 100% { transform: translate(0, 0) scale(1); }
+    50% { transform: translate(12px, -10px) scale(1.05); }
+}
+@media (prefers-reduced-motion: reduce) {
+    .float-media-img,
+    .float-media-badge,
+    .float-media-blob {
+        animation: none;
+    }
+}
+
+@media (max-width: 767px) {
+    .float-media-img { height: 300px; }
+    .float-media-badge { left: 10px; bottom: -16px; min-width: 160px; }
+    .float-media-blob { width: 160px; height: 160px; top: -16px; right: -16px; }
+}
+
+/* Trusted Clients logo tiles — uniform box regardless of source image size */
+.client-logo-tile {
+    width: 180px;
+    height: 100px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #fff;
+    border-radius: 12px;
+    box-shadow: 0 4px 14px rgba(26, 43, 73, 0.08);
+    padding: 16px;
+    transition: box-shadow 0.3s ease, transform 0.3s ease;
+}
+.client-logo-tile:hover {
+    box-shadow: 0 10px 26px rgba(26, 43, 73, 0.14);
+    transform: translateY(-3px);
+}
+.client-logo-tile img {
+    max-width: 100%;
+    max-height: 100%;
+    width: auto;
+    height: auto;
+    object-fit: contain;
+}
+@media (max-width: 480px) {
+    .client-logo-tile { width: 140px; height: 80px; padding: 10px; }
+}
+
+/* Pricing "Most Popular" ribbon */
+.ribbon-badge {
+    position: absolute;
+    top: -14px;
+    left: 50%;
+    transform: translateX(-50%);
+    background: #ff6200;
+    color: #fff;
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 6px 16px;
+    border-radius: 9999px;
+    box-shadow: 0 8px 20px rgba(255, 98, 0, 0.35);
+    white-space: nowrap;
+}
+
+/* Contact page icon chips */
+.icon-chip {
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    width: 34px;
+    height: 34px;
+    border-radius: 50%;
+    background: rgba(255, 98, 0, 0.1);
+    margin-right: 10px;
+    flex-shrink: 0;
+}
+
+/* How It Works — connecting timeline line behind numbered steps */
+.steps-row {
+    position: relative;
+}
+@media (min-width: 768px) {
+    .steps-row::before {
+        content: "";
+        position: absolute;
+        top: 56px;
+        left: 12.5%;
+        right: 12.5%;
+        height: 2px;
+        background: rgba(26, 43, 73, 0.12);
+        z-index: 0;
+    }
+    .steps-row > [class*="col-"] {
+        position: relative;
+        z-index: 1;
+    }
+}
+
+/* Custom cursor */
+body.custom-cursor-active {
+    cursor: none;
+}
+body.custom-cursor-active input,
+body.custom-cursor-active textarea,
+body.custom-cursor-active select {
+    cursor: auto;
+}
+.cursor-dot {
+    position: fixed;
     top: 0;
     left: 0;
-    right: 0;
-    bottom: 0;
-    background: rgba(0, 0, 0, 0.55);
+    width: 8px;
+    height: 8px;
+    margin-left: -4px;
+    margin-top: -4px;
+    border-radius: 50%;
+    background: #ff6200;
+    pointer-events: none;
+    z-index: 9999;
+    opacity: 0;
+    transition: opacity 0.25s ease;
+}
+.cursor-ring {
+    position: fixed;
+    top: 0;
+    left: 0;
+    width: 34px;
+    height: 34px;
+    margin-left: -17px;
+    margin-top: -17px;
+    border-radius: 50%;
+    border: 1.5px solid rgba(255, 98, 0, 0.55);
+    pointer-events: none;
+    z-index: 9998;
+    opacity: 0;
+    transition: width 0.25s ease, height 0.25s ease, margin 0.25s ease,
+        border-color 0.25s ease, background-color 0.25s ease, opacity 0.25s ease;
+}
+body.cursor-hover .cursor-ring {
+    width: 54px;
+    height: 54px;
+    margin-left: -27px;
+    margin-top: -27px;
+    border-color: #1a2b49;
+    background: rgba(255, 98, 0, 0.1);
+}
+body.cursor-hover .cursor-dot {
+    opacity: 0;
+}
+@media (max-width: 991px) {
+    .cursor-dot,
+    .cursor-ring {
+        display: none !important;
+    }
+}
+
+/* Subtle Ken Burns drift for hero images (Home / About / Pricing) */
+@keyframes heroKenBurns {
+    0% { transform: scale(1); }
+    100% { transform: scale(1.08); }
+}
+.hero-motion {
+    animation: heroKenBurns 20s ease-in-out infinite alternate;
+    will-change: transform;
+}
+.va-section.hero-motion::before {
+    animation: heroKenBurns 20s ease-in-out infinite alternate;
+    will-change: transform;
+}
+@media (prefers-reduced-motion: reduce) {
+    .hero-motion,
+    .va-section.hero-motion::before {
+        animation: none;
+    }
+}
+
+/* Standard page hero — used for pages without a bespoke hero treatment */
+.page-hero {
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+}
+
+@media (max-width: 1024px) {
+    .page-hero {
+        min-height: 60vh;
+    }
+}
+
+@media (max-width: 768px) {
+    .page-hero {
+        min-height: 50vh;
+    }
+}
+
+@media (max-width: 480px) {
+    .page-hero {
+        min-height: 40vh;
+    }
+}
+
+/* Reusable full-bleed video hero (Services, Pricing) */
+.video-hero-wrap {
+    position: relative;
+    min-height: 80vh;
+    display: flex;
+    align-items: center;
+    overflow: hidden;
+    color: #fff;
+    font-family: "Poppins", sans-serif;
+}
+
+.video-hero-video {
+    position: absolute;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: 0;
+}
+
+.video-hero-overlay {
+    position: absolute;
+    inset: 0;
+    background: linear-gradient(100deg, rgb(6 11 22 / 89%) 0%, rgb(10 17 32 / 64%) 40%, rgba(13, 21, 38, 0.72) 70%, rgba(13, 21, 38, 0.55) 100%);
     z-index: 1;
 }
 
-/* Ensure all content is above overlay */
-.service-banner > * {
-    position: relative;
-    z-index: 2;
+.video-hero-wrap > .container {
+    padding-top: 56px;
+    padding-bottom: 56px;
 }
 
-/* Floating Services */
-.floating-services {
-    position: relative;
-    width: 100%;
-    height: 100%;
+.video-hero-wrap h1,
+.video-hero-wrap h2,
+.video-hero-wrap p {
+    text-shadow: 0 2px 18px rgba(0, 0, 0, 0.55), 0 1px 4px rgba(0, 0, 0, 0.5);
 }
 
+@media (max-width: 1024px) {
+    .video-hero-wrap { min-height: 60vh; }
+}
+@media (max-width: 768px) {
+    .video-hero-wrap { min-height: 50vh; }
+}
+@media (max-width: 480px) {
+    .video-hero-wrap { min-height: 40vh; }
+}
+
+.btn-outline-light {
+    display: inline-block;
+    border: 2px solid #fff;
+    color: #fff;
+    background: transparent;
+    padding: 10px 26px;
+    border-radius: 9999px;
+    font-weight: 500;
+    transition: all 0.3s ease;
+}
+.btn-outline-light:hover {
+    background: #fff;
+    color: #1a2b49;
+}
+
+/* Quick-nav chips under the services hero */
 .service {
-    background: #61615d;
+    background: rgba(255, 255, 255, 0.14);
+    backdrop-filter: blur(8px);
+    border: 1px solid rgba(255, 255, 255, 0.28);
     color: #fff;
     padding: 0.5rem 1rem;
     border-radius: 1.25rem;
+    font-size: 0.85rem;
     white-space: nowrap;
     text-align: center;
-    transition: background-color 0.3s, color 0.3s;
+    transition: background-color 0.3s, color 0.3s, border-color 0.3s;
     cursor: pointer;
-    z-index: 5;
-    pointer-events: auto;
 }
-/* Smooth zoom animation */
+.service:hover {
+    background-color: #ff6200;
+    border-color: #ff6200;
+    color: #fff;
+}
+
+/* Smooth zoom animation when a card is targeted from the quick-nav */
 .service-card.zoom-highlight {
     transform: scale(1.08);
     transition: transform 0.4s cubic-bezier(0.4, 2, 0.6, 1);
@@ -299,129 +704,16 @@ footer {
     box-shadow: 0 0 20px rgba(255, 98, 0, 0.4);
 }
 
-@media (min-width: 768px) {
-    .service:nth-child(1) {
-        top: 15%;
-        left: 10%;
-    }
-    .service:nth-child(2) {
-        top: 25%;
-        right: 12%;
-    }
-    .service:nth-child(3) {
-        top: 45%;
-        left: 12%;
-    }
-    .service:nth-child(4) {
-        top: 55%;
-        right: 8%;
-    }
-    .service:nth-child(5) {
-        top: 70%;
-        left: 20%;
-    }
-    .service:nth-child(6) {
-        top: 85%;
-        right: 15%;
-    }
-    .service {
-        position: absolute;
-        animation: float 6s infinite ease-in-out;
-        animation-delay: calc(var(--index) * 1s);
-    }
-}
-
-@keyframes float {
-    0% {
-        transform: translateY(0px);
-        opacity: 0.8;
-    }
-    50% {
-        transform: translateY(-15px);
-        opacity: 1;
-    }
-    100% {
-        transform: translateY(0px);
-        opacity: 0.8;
-    }
-}
-
-.service:hover {
-    background-color: #ff6200;
-    color: black;
-}
-
-/* Responsive Adjustments */
-@media (max-width: 1024px) {
-    .service-banner {
-        min-height: 60vh;
-    }
-    .service-banner h2 {
-        font-size: 2rem;
-    }
-    .service-banner h4 {
-        font-size: 1rem;
-    }
-    .service {
-        padding: 0.4rem 0.8rem;
-        font-size: 0.9rem;
-    }
-}
-
-@media (max-width: 768px) {
-    .service-banner {
-        min-height: 50vh;
-    }
-    .flex-col {
-        flex-direction: column !important;
-    }
-    .service-banner h2 {
-        font-size: 1.5rem;
-    }
-    .service-banner h4 {
-        font-size: 0.9rem;
-    }
-    .floating-services {
-        position: static;
-        grid-template-columns: 1fr;
-        gap: 0.25rem;
-    }
-    .service {
-        position: static;
-        padding: 0.3rem 0.6rem;
-        font-size: 0.85rem;
-        animation: none;
-    }
-}
-
-@media (max-width: 480px) {
-    .service-banner {
-        min-height: 40vh;
-    }
-    .service-banner h2 {
-        font-size: 1.2rem;
-    }
-    .service-banner h4 {
-        font-size: 0.8rem;
-    }
-    .service {
-        padding: 0.2rem 0.4rem;
-        font-size: 0.75rem;
-    }
-    .floating-services {
-        gap: 0.1rem;
-        padding: 0.5rem;
-    }
-}
-
-/* Highlight and Zoom effect for cards */
-.highlight {
-    border: 2px solid #ff6200;
-    transition: border 0.3s;
-}
-
 .service-card {
     transition: transform 0.5s ease;
+}
+
+/* What We Offer card images */
+.service-card-img {
+    width: 100%;
+    height: 170px;
+    object-fit: cover;
+    display: block;
 }
 /* social / contact icon brand colors */
 .icon-linkedin {

@@ -21,9 +21,6 @@ body {
 
 section {
     background: var(--white);
-    border-radius: var(--radius);
-    box-shadow: var(--shadow);
-    margin-bottom: 2.5rem;
     padding: 3rem 1.5rem;
 }
 
@@ -110,7 +107,7 @@ p {
 
 .card:hover {
     transform: translateY(-8px);
-    box-shadow: 0 12px 30px rgba(0, 0, 0, 0.1);
+    box-shadow: 0 12px 30px rgba(255, 98, 0, 0.18), 0 4px 12px rgba(26, 43, 73, 0.08);
 }
 
 .pricing-card {
