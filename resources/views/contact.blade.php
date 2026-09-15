@@ -33,7 +33,7 @@
                     <ul class="list-unstyled">
                         <li class="mb-3 d-flex align-items-center">
                             <span class="icon-chip">
-                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="52 26 88 66" class="w-5 h-5 min-w-[20px]">
+                                <svg xmlns="http://www.w3.org/2000/svg" viewBox="52 36 85 65">
                                 <!-- Left Blue Column -->
                                 <path fill="#4285f4" d="M58 108h14V74L52 59v43c0 3.32 2.69 6 6 6"/>
                                 <!-- Right Green Column -->
@@ -53,16 +53,7 @@
                             +91 99134 47761
                         </li>
                         <li class="mb-3 d-flex align-items-center">
-                            <span class="icon-chip"><svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24" class="w-5 h-5 min-w-[20px]">
-                            <!-- Red Top Loop -->
-                            <path fill="#EA4335" d="M12 2C8.14 2 5 5.14 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.86-3.14-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z" />
-                            <!-- Green Bottom Shadow/Base -->
-                            <path fill="#34A853" d="M12 22s-7-7.75-7-13c0-.34.03-.67.08-1L12 16.5l6.92-8.5c.05.33.08.66.08 1 0 5.25-7 13-7 13z" opacity="0.15" />
-                            <!-- Yellow Left Accent -->
-                            <path fill="#FBBC05" d="M5.08 8C5.61 5.39 7.89 3.5 10.7 3.12L5.08 8z" opacity="0.2" />
-                            <!-- Blue Center Dot -->
-                            <path fill="#4285F4" d="M12 6.5c-1.38 0-2.5 1.12-2.5 2.5s1.12 2.5 2.5 2.5 2.5-1.12 2.5-2.5-1.12-2.5-2.5-2.5z" />
-                            </svg></span>
+                            <span class="icon-chip"><i class="fas fa-map-marker-alt icon-location"></i></span>
                             Surat, Gujarat, India
                         </li>
                         <li class="mb-3 d-flex align-items-center">

@@ -93,6 +93,15 @@
 .btn-primary {
     /* background: linear-gradient(90deg, #ff6200, #ff7f00) !important; */
     background-color: #ff6200 !important;
+    /* Bootstrap's own .btn-primary sets --bs-btn-border-color to its default
+       blue and applies it via `border: 1px solid var(--bs-btn-border-color)`;
+       since we only override the color/background here, that blue border
+       (and its hover/active/focus variants) was still showing through. */
+    --bs-btn-border-color: transparent;
+    --bs-btn-hover-border-color: transparent;
+    --bs-btn-active-border-color: transparent;
+    --bs-btn-focus-shadow-rgb: 255, 98, 0;
+    border-color: transparent !important;
     color: #fff !important;
     padding: 12px 30px !important;
      border-radius: 9999px !important;
@@ -191,6 +200,11 @@
         padding: 0.5rem 1rem;
         width: 100%;
         text-align: left;
+    }
+    /* Match the nav-link's 1rem left padding so the logo lines up with
+       "About Us" / "Services" / etc. instead of sitting flush left of them. */
+    .navbar-brand {
+        padding-left: 1rem;
     }
     .navbar .container,
     .navbar .container-fluid {
@@ -434,6 +448,21 @@ body {
     .float-media-blob { width: 160px; height: 160px; top: -16px; right: -16px; }
 }
 
+/* Stat row (About/Pricing/Contact hero stats, Home teaser stats) — the
+   28px gap/divider padding that's fine with 2-3 stats side-by-side on
+   desktop crowds the numbers together on narrow phones. */
+@media (max-width: 480px) {
+    .stat-row {
+        gap: 14px;
+    }
+    .stat-row .stat {
+        padding-right: 14px;
+    }
+    .stat-row .stat-num {
+        font-size: 1.3rem;
+    }
+}
+
 /* Trusted Clients logo tiles — uniform box regardless of source image size */
 .client-logo-tile {
     width: 180px;
@@ -496,6 +525,17 @@ body {
     margin-right: 10px;
     flex-shrink: 0;
     overflow: hidden;
+}
+/* Normalize icon size inside the chip — Font Awesome glyphs (phone, map
+   marker, LinkedIn, Facebook, WhatsApp) otherwise render smaller than the
+   raw Gmail SVG's 20px box, making icons look mismatched in the list. */
+.icon-chip i {
+    font-size: 18px;
+    line-height: 1;
+}
+.icon-chip svg {
+    width: 18px;
+    height: 18px;
 }
 
 /* How It Works — connecting timeline line behind numbered steps */
@@ -753,7 +793,10 @@ body.cursor-hover .cursor-dot {
 .service-quicknav {
     display: grid;
     grid-template-columns: repeat(2, max-content);
-    justify-content: center;
+    /* Left-aligned on mobile/tablet to match the eyebrow/heading/paragraph
+       above it (all left-aligned) — desktop's own rule below re-centers
+       nothing, it just switches to 6 columns and stays left-started. */
+    justify-content: start;
     gap: 0.5rem 0.75rem;
 }
 @media (min-width: 576px) {

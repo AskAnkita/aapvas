@@ -1,0 +1,9 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="240" height="132" viewBox="0 0 240 132">
+  <g transform="translate(70,0)">
+    <polygon points="50,16 84,84 66,84 50,50 34,84 16,84" fill="#1a2b49" opacity="0.5" />
+    <polygon points="50,26 78,84 62,84 50,58 38,84 22,84" fill="#ff6200" />
+  </g>
+  <text x="120" y="120" text-anchor="middle" font-family="Poppins, Arial, Helvetica, sans-serif" font-weight="700" font-size="26" letter-spacing="2">
+    <tspan fill="#1a2b49">AAP</tspan><tspan fill="#ff6200">VAS</tspan>
+  </text>
+</svg>

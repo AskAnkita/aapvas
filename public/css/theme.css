@@ -118,7 +118,15 @@ p {
 
 .pricing-card.popular {
     border-color: var(--primary);
-    transform: scale(1.05);
+}
+
+/* Scaling the "Most Popular" card only makes sense once cards sit
+   side-by-side (md+); on a single mobile column it just pushes the
+   card's edges past its siblings' and reads as misaligned. */
+@media (min-width: 768px) {
+    .pricing-card.popular {
+        transform: scale(1.05);
+    }
 }
 
 .pricing-card h3 {

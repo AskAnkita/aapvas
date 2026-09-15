@@ -156,7 +156,7 @@
         // serving a week-old cached one under the server's max-age=604800. A plain string
         // (not filemtime()) so this works regardless of whether public_path() actually
         // resolves to a real folder on a given deployment.
-        $assetVer = '20260719-9';
+        $assetVer = '20260721-15';
     @endphp
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ $assetVer }}">
@@ -240,7 +240,7 @@
     <footer class="py-8 bg-gray-50 text-gray-800">
         <div class="container mx-auto px-4 text-center">
             <p class="mb-4">&copy; {{ date('Y') }} AAPVAS | All Rights Reserved</p>
-            <div class="flex justify-center space-x-4 mb-4">
+            <div class="flex flex-wrap justify-center gap-x-4 gap-y-2 mb-4">
                 <a href="{{ route('home') }}" class="hover:text-orange-500">Home</a>
                 <a href="{{ route('about') }}" class="hover:text-orange-500">About</a>
                 <a href="{{ route('services') }}" class="hover:text-orange-500">Services</a>
