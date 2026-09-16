@@ -48,8 +48,13 @@
                 <div class="col-lg-6" data-aos="fade-left" data-aos-delay="150">
                     <div class="float-media">
                         <span class="float-media-blob"></span>
-                        <img src="{{ asset('assets/images/pricing-hero.jpg') }}"
-                            alt="Tracking business growth with a dedicated virtual assistant" class="float-media-img">
+                        @php
+                            $pricingHeroImgPath = public_path('assets/images/pricing-hero-currency.png');
+                            $pricingHeroImgVer = file_exists($pricingHeroImgPath) ? filemtime($pricingHeroImgPath) : '1';
+                        @endphp
+                        <img src="{{ asset('assets/images/pricing-hero-currency.png') }}?v={{ $pricingHeroImgVer }}"
+                            alt="Comparing pricing plans across currencies with a dedicated virtual assistant" class="float-media-img"
+                            style="object-fit: contain; background: #ffffff;">
                         <div class="float-media-badge">
                             <span class="badge-star">💰 Month-to-Month</span>
                             <span class="badge-text">No contracts, cancel anytime</span>

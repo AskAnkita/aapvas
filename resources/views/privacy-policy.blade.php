@@ -46,11 +46,8 @@
             </p>
 
             <h2 class="text-2xl font-semibold text-tertiary mt-8 mb-3">5. Your Rights</h2>
-            <p class="text-gray-700 mb-4">
-                You have the right to request access, update, or deletion of your personal information.
-            </p>
             <p class="text-gray-700 mb-6">
-                To request changes, contact us at <strong>info@aapvas.com</strong>.
+                You have the right to request access, update, or deletion of your personal information.
             </p>
 
             <h2 class="text-2xl font-semibold text-tertiary mt-8 mb-3">6. Third-Party Services</h2>
@@ -62,15 +59,6 @@
             <h2 class="text-2xl font-semibold text-tertiary mt-8 mb-3">7. Changes to This Policy</h2>
             <p class="text-gray-700 mb-6">
                 We may update this Privacy Policy when necessary. Changes will be posted on this page with a revised date.
-            </p>
-
-            <h2 class="text-2xl font-semibold text-tertiary mt-8 mb-3">8. Contact Us</h2>
-            <p class="text-gray-700 mb-3">
-                If you have any questions about this Privacy Policy, contact us at:
-            </p>
-            <p class="text-gray-700 mb-6">
-                📧 <strong>info@aapvas.com</strong><br>
-                🌐 <strong>aapvas.com</strong>
             </p>
 
             <a href="{{ url()->previous() }}" class="inline-block text-orange-500 hover:underline mt-6">
