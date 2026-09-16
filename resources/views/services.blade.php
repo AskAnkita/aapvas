@@ -231,21 +231,21 @@
                     <i class="bi bi-x-lg"></i>
                 </button>
                 <div class="modal-body service-modal-body">
-                    <!-- Hero: text left, image right -->
+                    <!-- Hero: centered icon + title only, no image or description (already shown on the card) -->
                     <div class="service-modal-hero">
                         <div class="service-modal-hero-text">
-                            <p class="service-modal-eyebrow">What We Offer</p>
+                            <div class="service-modal-icon"><i id="serviceDetailIcon"></i></div>
                             <h3 class="service-modal-title" id="serviceDetailModalLabel"><span id="serviceDetailTitle"></span></h3>
-                            <p id="serviceDetailDesc" class="service-modal-desc"></p>
-                            <a href="{{ route('contact') }}" class="service-modal-cta">Get Started</a>
-                        </div>
-                        <div class="service-modal-hero-media">
-                            <img id="serviceDetailImg" src="" alt="">
+                            <p id="serviceDetailTagline" class="service-modal-tagline"></p>
                         </div>
                     </div>
 
                     <!-- One-liner services -->
                     <div id="serviceDetailItems" class="service-modal-items"></div>
+
+                    <div class="service-modal-footer">
+                        <a href="{{ route('contact') }}" class="service-modal-cta">Get Started</a>
+                    </div>
                 </div>
             </div>
         </div>
@@ -258,6 +258,7 @@
         const serviceDetails = {
             'linked-in': {
                 title: 'LinkedIn Support',
+                tagline: 'Profile growth & lead generation on LinkedIn',
                 img: "{{ asset('assets/images/cards/linkedin-support.jpg') }}",
                 desc: 'From optimizing your profile and managing connections to creating engaging posts and lead generation, we help you build credibility and grow your network strategically on LinkedIn.',
                 items: [
@@ -279,6 +280,7 @@
             },
             'admin-support': {
                 title: 'Administrative Support',
+                tagline: 'Scheduling, documents & day-to-day admin',
                 img: "{{ asset('assets/images/cards/administrative-support.jpg') }}",
                 desc: 'From scheduling meetings to managing documents, our assistants handle daily admin tasks so you can stay focused on your core business.',
                 items: [
@@ -300,6 +302,7 @@
             },
             'email-calendar': {
                 title: 'Email Management',
+                tagline: 'Inbox & calendar, organized and on track',
                 img: "{{ asset('assets/images/cards/email-management.jpg') }}",
                 desc: 'Keep your inbox organized and your schedule on track with our email and calendar management services.',
                 items: [
@@ -321,6 +324,7 @@
             },
             'social-media': {
                 title: 'Social Media Management',
+                tagline: 'Content, scheduling & engagement growth',
                 img: "{{ asset('assets/images/cards/social-media-management.png') }}",
                 desc: 'Create, schedule, and manage social media content to increase engagement and grow your online presence.',
                 items: [
@@ -342,6 +346,7 @@
             },
             'web-dev': {
                 title: 'Web & Software Development',
+                tagline: 'Websites, software & digital solutions',
                 img: "{{ asset('assets/images/cards/web-development.jpg') }}",
                 desc: 'From e-commerce stores and hosting setup to custom web development and full software builds, we handle the technical side so your business runs smoothly online.',
                 items: [
@@ -363,6 +368,7 @@
             },
             'online-marketing': {
                 title: 'Online Marketing',
+                tagline: 'SEO, PPC & campaigns that convert',
                 img: "{{ asset('assets/images/cards/online-marketing.png') }}",
                 desc: 'Boost your brand online through SEO, PPC, email campaigns, and other digital marketing strategies.',
                 items: [
@@ -384,6 +390,7 @@
             },
             'book-keeping': {
                 title: 'Book Keeping',
+                tagline: 'Accurate, audit-ready financial records',
                 img: "{{ asset('assets/images/cards/bookkeeping.jpg') }}",
                 desc: 'Accurate, up-to-date financial records — invoices, expenses, and reconciliation handled so your books are always audit-ready.',
                 items: [
@@ -405,6 +412,7 @@
             },
             'real-estate': {
                 title: 'Real Estate Backend Management',
+                tagline: 'Listings, paperwork & client coordination',
                 img: "{{ asset('assets/images/cards/real-estate-management.jpg') }}",
                 desc: 'Listings, documentation, client follow-ups, and transaction paperwork managed behind the scenes for busy real estate professionals.',
                 items: [
@@ -426,6 +434,7 @@
             },
             'virtual-receptionist': {
                 title: 'Virtual Receptionist',
+                tagline: 'A professional voice for every call',
                 img: "{{ asset('assets/images/cards/virtual-receptionist.jpg') }}",
                 desc: 'A professional, welcoming voice for every call — answering, screening, and routing so no client is ever left waiting.',
                 items: [
@@ -447,6 +456,7 @@
             },
             'recruitment': {
                 title: 'Recruitment Backend Management',
+                tagline: 'Screening, scheduling & hiring support',
                 img: "{{ asset('assets/images/cards/recruitment-management.jpg') }}",
                 desc: 'Resume screening, interview scheduling, and candidate coordination — we keep your hiring pipeline moving without the busywork.',
                 items: [
@@ -468,6 +478,7 @@
             },
             'medical-transcription': {
                 title: 'Medical Transcription & Billing',
+                tagline: 'Accurate transcription & billing support',
                 img: "{{ asset('assets/images/cards/medical-transcription-billing.jpg') }}",
                 desc: 'Accurate transcription and billing support for healthcare practices, handled with care and strict attention to detail.',
                 items: [
@@ -489,6 +500,7 @@
             },
             'personal-assistance': {
                 title: 'Personal Assistance',
+                tagline: 'Calendar, travel & daily organization',
                 img: "{{ asset('assets/images/cards/personal-assistance.jpg') }}",
                 desc: 'Calendar management, travel planning, and day-to-day organization so you can focus on what only you can do.',
                 items: [
@@ -552,8 +564,8 @@
             const detailModalEl = document.getElementById('serviceDetailModal');
             const detailModal = new bootstrap.Modal(detailModalEl);
             const detailTitle = document.getElementById('serviceDetailTitle');
-            const detailImg = document.getElementById('serviceDetailImg');
-            const detailDesc = document.getElementById('serviceDetailDesc');
+            const detailIcon = document.getElementById('serviceDetailIcon');
+            const detailTagline = document.getElementById('serviceDetailTagline');
             const detailItems = document.getElementById('serviceDetailItems');
 
             document.querySelectorAll('.service-card').forEach(function(card) {
@@ -562,9 +574,9 @@
 
                 function openDetail() {
                     detailTitle.textContent = info.title;
-                    detailImg.src = info.img;
-                    detailImg.alt = info.title;
-                    detailDesc.textContent = info.desc;
+                    const cardIcon = card.querySelector('.service-card-icon');
+                    detailIcon.className = cardIcon ? cardIcon.className : '';
+                    detailTagline.textContent = info.tagline || '';
                     detailItems.innerHTML = '';
                     info.items.forEach(function(item) {
                         const itemEl = document.createElement('div');

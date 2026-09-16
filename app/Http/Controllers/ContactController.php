@@ -14,12 +14,15 @@ class ContactController extends Controller
         $request->validate([
             'name' => 'required|string|max:255',
             'email' => 'required|email|max:255',
+            'phone' => 'nullable|string|max:30',
             'message' => 'required|string',
         ]);
 
-        $data = $request->only(['name', 'email', 'subject', 'message']);
+        $data = $request->only(['name', 'email', 'phone', 'subject', 'message']);
 
-        Contact::create($data);
+        // The live contacts table has no phone column; keep the DB write to the
+        // original fields and send the phone number through in the email only.
+        Contact::create($request->only(['name', 'email', 'subject', 'message']));
 
         // Attempt to send email to site owner. Do not fail the whole request if mail fails.
         try {

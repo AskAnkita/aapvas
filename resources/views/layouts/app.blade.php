@@ -156,7 +156,7 @@
         // serving a week-old cached one under the server's max-age=604800. A plain string
         // (not filemtime()) so this works regardless of whether public_path() actually
         // resolves to a real folder on a given deployment.
-        $assetVer = '20260915-2';
+        $assetVer = '20260916-9';
     @endphp
     <!-- Custom CSS -->
     <link rel="stylesheet" href="{{ asset('css/style.css') }}?v={{ $assetVer }}">
